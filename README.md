@@ -1,1 +1,2 @@
 # ReactPractice
+Django + React + Antd

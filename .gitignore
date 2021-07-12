@@ -1,1 +1,7 @@
 .vscode
+#Python:
+*.py[cod]
+
+backend/project/wsgiprod.py
+backend/log/*
+backend/db.sqlite3

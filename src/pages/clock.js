@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import logo from '../assets/logo.svg';
 import '../style/css/clock.css';
-import './common/common.js';
 
 import { getCurrentTime, getTimeDiff } from './common/common.js';
 

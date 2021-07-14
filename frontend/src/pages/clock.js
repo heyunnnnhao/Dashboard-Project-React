@@ -18,7 +18,7 @@ function Clock() {
     let date = getCurrentTime('year', 'month', 'day');
     let now = getCurrentTime('hour', 'minute', 'second');
     let end = '';
-    if (getCurrentTime('hour') > 12) {
+    if (getCurrentTime('hour') >= 12) {
       end = '18:00:00';
       setText('Off work');
     } else {

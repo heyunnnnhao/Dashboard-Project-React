@@ -18,12 +18,16 @@ function Clock() {
     let date = getCurrentTime('year', 'month', 'day');
     let now = getCurrentTime('hour', 'minute', 'second');
     let end = '';
-    if (getCurrentTime('hour') >= 12) {
-      end = '18:00:00';
-      setText('Off work');
-    } else {
+
+    let currentHour = getCurrentTime('hour');
+    if (currentHour < 12) {
       end = '12:00:00';
-      setText('to lunch')
+      setText('to lunch - ');
+    } else if (currentHour < 18) {
+      end = '18:00:00';
+      setText('Off work - ');
+    } else {
+      setText('You are off!');
     }
     setDate(date);
     setTime(now);
@@ -34,7 +38,10 @@ function Clock() {
     <div className="clock">
       <img src={logo} className="logo" alt="logo" />
       <h2>{currentDate}</h2>
-      <h1>{text} - {timeTillOff}</h1>
+      <h1>
+        {text}
+        {timeTillOff}
+      </h1>
     </div>
   );
 }

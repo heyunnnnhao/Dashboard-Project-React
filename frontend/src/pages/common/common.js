@@ -41,3 +41,7 @@ export const getTimeDiff = function (start, end) {
     seconds
   );
 };
+
+export const getTimeStamp = function (start, end) {
+
+};

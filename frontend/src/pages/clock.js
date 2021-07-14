@@ -23,7 +23,7 @@ function Clock() {
       setText('Off work');
     } else {
       end = '12:00:00';
-      setText('Lunch')
+      setText('to lunch')
     }
     setDate(date);
     setTime(now);
@@ -34,7 +34,7 @@ function Clock() {
     <div className="clock">
       <img src={logo} className="logo" alt="logo" />
       <h2>{currentDate}</h2>
-      <h1>{text}: {timeTillOff}</h1>
+      <h1>{text} - {timeTillOff}</h1>
     </div>
   );
 }

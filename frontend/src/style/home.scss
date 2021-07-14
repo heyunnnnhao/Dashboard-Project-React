@@ -4,4 +4,14 @@ body {
     'Droid Sans', 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #282c34;
+}
+
+.nav {
+  list-style-type: none;
+  .navitem {
+    color: grey;
+    text-decoration: none;
+    line-height: 2rem;
+  }
 }

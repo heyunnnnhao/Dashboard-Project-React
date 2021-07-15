@@ -1,5 +1,5 @@
 import { Link, useLocation } from 'react-router-dom';
-import '../style/css/home.css';
+import '../style/css/home.scoped.css';
 import arrow from '../assets/arrow.svg';
 
 export function Whoops() {

@@ -22,7 +22,7 @@ function Clock() {
     let currentHour = getCurrentTime('hour');
     if (currentHour < 12) {
       end = '12:00:00';
-      setText('to lunch - ');
+      setText('To lunch - ');
     } else if (currentHour < 18) {
       end = '18:00:00';
       setText('Off work - ');

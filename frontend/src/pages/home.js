@@ -8,24 +8,17 @@ function App() {
     <Router>
       <ul className="nav">
         <li>
-          <Link className="navitem" to="/clock">
-            Clock
-          </Link>
-        </li>
-        <li>
           <Link className="navitem" to="/time">
             Time
           </Link>
         </li>
         <li>
           <Link className="navitem" to="/clock">
-            Clock
+            Count Down
           </Link>
         </li>
       </ul>
-
       <Switch>
-        <Route path="/clock" component={Clock} />
         <Route path="/clock" component={Clock} />
         <Route path="/time" component={Time} />
       </Switch>

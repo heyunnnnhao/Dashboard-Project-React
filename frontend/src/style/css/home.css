@@ -10,7 +10,7 @@ body {
   list-style-type: none;
 }
 .nav .navitem {
-  color: grey;
+  color: lightgrey;
   text-decoration: none;
   line-height: 2rem;
 }

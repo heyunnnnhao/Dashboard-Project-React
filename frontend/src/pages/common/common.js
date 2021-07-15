@@ -27,9 +27,7 @@ export const getTimeDiff = function (start, end) {
   let minutes = Math.floor(diff / 1000 / 60);
   diff -= minutes * 1000 * 60;
   let seconds = Math.floor(diff / 1000);
-  // If using time pickers with 24 hours format, add the below line get exact hours
   if (hours < 0) hours = hours + 24;
-
   return (
     (hours < 10 ? '0' : '') +
     hours +
@@ -40,8 +38,4 @@ export const getTimeDiff = function (start, end) {
     (seconds < 10 ? '0' : '') +
     seconds
   );
-};
-
-export const getTimeStamp = function (start, end) {
-
 };

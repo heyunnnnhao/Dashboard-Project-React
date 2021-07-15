@@ -1,15 +1,20 @@
 import { Link, BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import '../style/css/home.css';
 import Clock from './clock';
-import Test from './test';
+import Time from './time';
 
 function App() {
   return (
     <Router>
       <ul className="nav">
         <li>
-          <Link className="navitem" to="/test">
-            Test
+          <Link className="navitem" to="/clock">
+            Clock
+          </Link>
+        </li>
+        <li>
+          <Link className="navitem" to="/time">
+            Time
           </Link>
         </li>
         <li>
@@ -21,7 +26,8 @@ function App() {
 
       <Switch>
         <Route path="/clock" component={Clock} />
-        <Route path="/test" component={Test} />
+        <Route path="/clock" component={Clock} />
+        <Route path="/time" component={Time} />
       </Switch>
     </Router>
   );

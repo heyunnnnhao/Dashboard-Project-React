@@ -6,12 +6,12 @@ body {
   background-color: #282c34;
 }
 
-.nav {
+.top_nav {
   list-style-type: none;
   display: flex;
   flex-direction: row;
 }
-.nav .navitem {
+.top_nav .top_nav_item {
   color: lightgrey;
   text-decoration: none;
   line-height: 2rem;

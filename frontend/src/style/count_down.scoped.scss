@@ -1,14 +1,21 @@
-.clock {
+.count_down {
   min-height: 90vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
   color: white;
   .logo {
     height: 40vmin;
     pointer-events: none;
+  }
+  .time {
+    font-size: 6rem;
+    margin: 1rem auto;
+  }
+  .date {
+    font-size: 2rem;
+    margin: 1rem auto;
   }
 }
 

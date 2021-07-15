@@ -1,9 +1,9 @@
 import { useState } from 'react';
-import '../style/css/time.scoped.css';
+import '../style/css/clock.scoped.css';
 
 import { getCurrentTime, getCurrentDate } from './common/common.js';
 
-function Time() {
+function Clock() {
   let [currentDate, setDate] = useState(getCurrentDate('year', 'month', 'day'));
   let [currentTime, setTime] = useState(getCurrentTime('hour', 'minute', 'second'));
 
@@ -22,7 +22,7 @@ function Time() {
   return (
     <div className="clock">
       <div className="time">{currentTime}</div>
-      <div>
+      <div  className="date">
         <span>{currentDate}</span>&ensp;
         <span>{getCurrentDate('week')}</span>
       </div>
@@ -30,4 +30,4 @@ function Time() {
   );
 }
 
-export default Time;
+export default Clock;

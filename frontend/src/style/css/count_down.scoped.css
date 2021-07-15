@@ -1,15 +1,22 @@
-.clock {
+.count_down {
   min-height: 90vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
   color: white;
 }
-.clock .logo {
+.count_down .logo {
   height: 40vmin;
   pointer-events: none;
+}
+.count_down .time {
+  font-size: 6rem;
+  margin: 1rem auto;
+}
+.count_down .date {
+  font-size: 2rem;
+  margin: 1rem auto;
 }
 
 @media (prefers-reduced-motion: no-preference) {

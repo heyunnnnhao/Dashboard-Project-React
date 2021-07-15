@@ -3,7 +3,7 @@ const formatTime = (time) => {
   return time;
 };
 
-export const getCurrentTime = function () {
+export const getCurrentTime = function() {
   let args = Object.values(arguments);
   let date = new Date();
   let time = {
@@ -18,7 +18,7 @@ export const getCurrentTime = function () {
   return arr.join(':');
 };
 
-export const getCurrentDate = function () {
+export const getCurrentDate = function() {
   let args = Object.values(arguments);
   let date = new Date();
   let weeks = { 1: 'Mon.', 2: 'Tue.', 3: 'Wed.', 4: 'Thu.', 5: 'Fri.', 6: 'Sat.', 7: 'Sun.' };
@@ -35,7 +35,7 @@ export const getCurrentDate = function () {
   return arr.join('-');
 };
 
-export const getTimeDiff = function (start, end) {
+export const getTimeDiff = function(start, end) {
   start = start.split(':');
   end = end.split(':');
   let startDate = new Date(0, 0, 0, start[0], start[1], start[2]);
@@ -47,14 +47,5 @@ export const getTimeDiff = function (start, end) {
   diff -= minutes * 1000 * 60;
   let seconds = Math.floor(diff / 1000);
   if (hours < 0) hours = hours + 24;
-  return (
-    (hours < 10 ? '0' : '') +
-    hours +
-    ':' +
-    (minutes < 10 ? '0' : '') +
-    minutes +
-    ':' +
-    (seconds < 10 ? '0' : '') +
-    seconds
-  );
+  return formatTime(hours) + ':' + formatTime(minutes) + ':' + formatTime(seconds);
 };

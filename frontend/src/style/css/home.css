@@ -8,9 +8,12 @@ body {
 
 .nav {
   list-style-type: none;
+  display: flex;
+  flex-direction: row;
 }
 .nav .navitem {
   color: lightgrey;
   text-decoration: none;
   line-height: 2rem;
+  margin: 0 1rem;
 }

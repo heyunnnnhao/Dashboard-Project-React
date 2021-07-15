@@ -1,19 +1,38 @@
+const formatTime = (time) => {
+  time = time < 10 ? '0' + time : time;
+  return time;
+};
+
 export const getCurrentTime = function () {
   let args = Object.values(arguments);
   let date = new Date();
-  let datetime = {
-    year: date.getFullYear(),
-    month: '-' + (date.getMonth() + 1),
-    day: '-' + date.getDate(),
-    hour: date.getHours() < 10 ? ' 0' + date.getHours() : ' ' + date.getHours(),
-    minute: date.getMinutes() < 10 ? ':0' + date.getMinutes() : ':' + date.getMinutes(),
-    second: date.getSeconds() < 10 ? ':0' + date.getSeconds() : ':' + date.getSeconds(),
+  let time = {
+    hour: formatTime(date.getHours()),
+    minute: formatTime(date.getMinutes()),
+    second: formatTime(date.getSeconds()),
   };
   let arr = [];
   args.forEach((i) => {
-    arr.push(datetime[i]);
+    arr.push(time[i]);
   });
-  return arr.join('');
+  return arr.join(':');
+};
+
+export const getCurrentDate = function () {
+  let args = Object.values(arguments);
+  let date = new Date();
+  let weeks = { 1: 'Mon.', 2: 'Tue.', 3: 'Wed.', 4: 'Thu.', 5: 'Fri.', 6: 'Sat.', 7: 'Sun.' };
+  let day = {
+    year: formatTime(date.getFullYear()),
+    month: formatTime(date.getMonth() + 1),
+    day: formatTime(date.getDate()),
+    week: weeks[date.getDay()],
+  };
+  let arr = [];
+  args.forEach((i) => {
+    arr.push(day[i]);
+  });
+  return arr.join('-');
 };
 
 export const getTimeDiff = function (start, end) {

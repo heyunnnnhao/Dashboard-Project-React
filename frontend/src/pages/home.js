@@ -1,6 +1,6 @@
 import { Link, BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import '../style/css/home.css';
-import Clock from './clock';
+import Clock from './count_down';
 import Time from './time';
 
 function App() {

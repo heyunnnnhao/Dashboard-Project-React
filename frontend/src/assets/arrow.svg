@@ -1,0 +1,16 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="80px"
+  height="80px"
+  viewBox="0 0 24 24"
+  aria-labelledby="chevronDownIconTitle"
+  stroke="grey"
+  stroke-width="0.6"
+  stroke-linecap="square"
+  stroke-linejoin="miter"
+  fill="none"
+  color="grey"
+>
+  <title id="chevronDownIconTitle">Chevron Down</title>
+  <polyline points="6 10 12 16 18 10" />
+</svg>

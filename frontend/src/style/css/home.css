@@ -10,10 +10,43 @@ body {
   list-style-type: none;
   display: flex;
   flex-direction: row;
+  margin: auto auto auto 2rem;
 }
 .top_nav .top_nav_item {
-  color: lightgrey;
+  height: 10%;
+  color: grey;
   text-decoration: none;
-  line-height: 2rem;
+  line-height: 4rem;
   margin: 0 1rem;
+}
+.top_nav span:last-child {
+  margin: auto 2rem auto auto;
+}
+.top_nav .arrow {
+  width: 40px;
+  height: 40px;
+  stroke: grey;
+  stroke-width: 0.6;
+  stroke-linecap: square;
+  stroke-linejoin: miter;
+  fill: none;
+  color: grey;
+}
+.top_nav .arrow_animation {
+  animation-name: MX;
+  animation-duration: 200ms;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+}
+@keyframes MX {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(180deg);
+  }
+}
+
+.disappear {
+  display: none;
 }

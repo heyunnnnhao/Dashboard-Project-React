@@ -3,10 +3,10 @@ import ReactDOM from 'react-dom';
 import Home from './pages/home';
 
 ReactDOM.render(
-  <React.StrictMode>
-    <React.Fragment>
+  <>
+    <React.StrictMode>
       <Home />
-    </React.Fragment>
-  </React.StrictMode>,
+    </React.StrictMode>
+  </>,
   document.getElementById('root')
 );

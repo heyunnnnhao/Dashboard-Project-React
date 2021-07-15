@@ -1,9 +1,9 @@
 <svg
+  role="img"
   xmlns="http://www.w3.org/2000/svg"
-  width="80px"
   height="80px"
   viewBox="0 0 24 24"
-  aria-labelledby="chevronDownIconTitle"
+  aria-labelledby="chevronUpIconTitle"
   stroke="grey"
   stroke-width="0.6"
   stroke-linecap="square"
@@ -11,6 +11,6 @@
   fill="none"
   color="grey"
 >
-  <title id="chevronDownIconTitle">Chevron Down</title>
-  <polyline points="6 10 12 16 18 10" />
+  <title id="chevronUpIconTitle">Chevron Up</title>
+  <polyline points="6 14 12 8 18 14 18 14" />
 </svg>

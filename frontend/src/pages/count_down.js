@@ -25,6 +25,7 @@ function CountDown() {
       end = '18:00:00';
       text = 'Off work - ';
     } else {
+      end = now;
       text = 'You are off!';
     }
     setDate(getCurrentDate('year', 'month', 'day'));

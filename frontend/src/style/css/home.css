@@ -31,22 +31,19 @@ body {
   stroke-linejoin: miter;
   fill: none;
   color: grey;
+  transition: all 0.3s;
+  opacity: 1;
 }
-.top_nav .arrow_animation {
-  animation-name: MX;
-  animation-duration: 200ms;
-  animation-timing-function: ease-out;
-  animation-fill-mode: forwards;
-}
-@keyframes MX {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(180deg);
-  }
+
+.navs {
+  opacity: 1;
+  transition: opacity 0.3s;
 }
 
 .disappear {
-  display: none;
+  opacity: 0;
+}
+
+.arrow_animation {
+  transform: rotate(180deg);
 }

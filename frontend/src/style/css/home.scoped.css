@@ -2,51 +2,30 @@
   list-style-type: none;
   display: flex;
   flex-direction: row;
-  margin: auto auto auto 2rem;
+  margin: auto auto auto 1rem;
 }
-.top_nav .top_nav_item {
+.top_nav .navs {
+  opacity: 1;
+  transition: opacity 0.3s;
+}
+.top_nav .navs .top_nav_item {
   height: 10%;
   color: grey;
   text-decoration: none;
   line-height: 4rem;
   margin: 0 1rem;
 }
-.top_nav span:last-child {
-  margin: auto 2rem auto auto;
-}
-.top_nav .arrow {
-  width: 40px;
-  height: 40px;
-  stroke: grey;
-  stroke-width: 0.6;
-  stroke-linecap: square;
-  stroke-linejoin: miter;
-  fill: none;
-  color: grey;
-  transition: all 0.3s;
-  opacity: 1;
-}
 
-.navs {
-  opacity: 1;
-  transition: opacity 0.3s;
+.app_footer {
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 2vh;
+  color: grey;
+  background-color: #232730;
 }
 
 .disappear {
   opacity: 0;
-}
-
-.arrow_animation {
-  transform: rotate(180deg);
-}
-
-.not_found {
-  min-height: 90vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  font-size: 8rem;
-  font-style: italic;
 }

@@ -7,9 +7,9 @@ body {
   background-color: #282c34;
 }
 
-$headerfootercolor: #21252e;
+$headerfootercolor: #232730;
 
-.header {
+.app_header {
   width: 100%;
   height: 6vh;
   background-color: $headerfootercolor;
@@ -18,16 +18,18 @@ $headerfootercolor: #21252e;
     color: grey;
     text-decoration: none;
     line-height: 6vh;
-    margin: 0 1rem;
+    margin: 0 2rem;
   }
 }
 
-.footer {
-  text-align: center;
-  // position: fixed;
-  bottom: 0;
-  width: 100%;
-  height: 2vh;
-  color: grey;
-  background-color: $headerfootercolor;
+
+.not_found {
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 6rem;
+  font-style: italic;
 }

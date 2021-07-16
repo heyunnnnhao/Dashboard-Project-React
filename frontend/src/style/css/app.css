@@ -6,24 +6,26 @@ body {
   background-color: #282c34;
 }
 
-.header {
+.app_header {
   width: 100%;
   height: 6vh;
-  background-color: #21252e;
+  background-color: #232730;
 }
-.header .logo {
+.app_header .logo {
   height: 10%;
   color: grey;
   text-decoration: none;
   line-height: 6vh;
-  margin: 0 1rem;
+  margin: 0 2rem;
 }
 
-.footer {
-  text-align: center;
-  bottom: 0;
-  width: 100%;
-  height: 2vh;
-  color: grey;
-  background-color: #21252e;
+.not_found {
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 6rem;
+  font-style: italic;
 }

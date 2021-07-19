@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import '../style/css/count_down.scoped.css';
-import icon from '../assets/icon.svg';
+import '@css/count_down.scoped.css';
+import icon from '@assets/icon.svg';
 
 import { getCurrentTime, getCurrentDate, getTimeDiff } from './common/common.js';
 

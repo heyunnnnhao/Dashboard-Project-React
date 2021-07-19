@@ -1,10 +1,11 @@
 import { BrowserRouter as Router, Link, Routes, Route, useLocation } from 'react-router-dom';
-import './style/css/app.css';
-import left from './assets/left.svg';
+import '@css/app.css';
+import left from '@assets/left.svg';
 
-import CountDown from './pages/count_down';
-import Clock from './pages/clock';
-import Home from './pages/home';
+import CountDown from '@pages/count_down';
+import Clock from '@pages/clock';
+import Home from '@pages/home';
+import Request from '@pages/request';
 
 function Whoops() {
   let location = useLocation();
@@ -43,21 +44,32 @@ function Footer() {
   if (location.pathname === '/') {
     return <footer className="app_footer">&copy; Copyright 2021 Yunhao He</footer>;
   } else {
-    return;
+    return null;
   }
 }
 
 function App() {
   return (
     <Router>
-      {<Header />}
+      <Header />
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/count_down" element={<CountDown />} />
-        <Route path="/clock" element={<Clock />} />
-        <Route path="*" element={<Whoops />} />
+        <Route path="/">
+          <Home />
+        </Route>
+        <Route path="/count_down">
+          <CountDown />
+        </Route>
+        <Route path="/clock/:day">
+          <Clock />
+        </Route>
+        <Route path="/request">
+          <Request />
+        </Route>
+        <Route path="*">
+          <Whoops />
+        </Route>
       </Routes>
-      {<Footer />}
+      <Footer />
     </Router>
   );
 }

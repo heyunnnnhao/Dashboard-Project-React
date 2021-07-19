@@ -6,7 +6,6 @@ import { getCurrentTime, getCurrentDate, getTimeDiff } from './common/common.js'
 
 function CountDown() {
   let [currentDate, setDate] = useState(getCurrentDate('year', 'month', 'day'));
-  let [currentTime, setTime] = useState(getCurrentTime('hour', 'minute', 'second'));
   let [timeTillOff, setTimeTillOff] = useState(' ');
   let [tipText, setText] = useState('');
 

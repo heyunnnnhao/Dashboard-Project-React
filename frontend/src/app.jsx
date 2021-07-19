@@ -19,7 +19,7 @@ function Whoops() {
 
 function Header() {
   let location = useLocation();
-  if (location.pathname == '/') {
+  if (location.pathname === '/') {
     return (
       <header className="app_header_main">
         <Link className="logo" to="/">
@@ -38,6 +38,15 @@ function Header() {
   }
 }
 
+function Footer() {
+  let location = useLocation();
+  if (location.pathname === '/') {
+    return <footer className="app_footer">&copy; Copyright 2021 Yunhao He</footer>;
+  } else {
+    return;
+  }
+}
+
 function App() {
   return (
     <Router>
@@ -48,6 +57,7 @@ function App() {
         <Route path="/clock" element={<Clock />} />
         <Route path="*" element={<Whoops />} />
       </Routes>
+      {<Footer />}
     </Router>
   );
 }

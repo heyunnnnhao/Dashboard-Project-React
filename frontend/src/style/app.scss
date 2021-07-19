@@ -7,6 +7,8 @@ body {
   background-color: #282c34;
 }
 
+$headerfootercolor: #232730;
+
 @mixin appheadersize($headerfootercolor: transparent) {
   background-color: $headerfootercolor;
   width: 100%;
@@ -31,6 +33,17 @@ body {
   }
 }
 
+.app_footer {
+  text-align: left;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 1rem;
+  color: grey;
+  background-color: $headerfootercolor;
+  font-size: 0.8rem;
+  margin: 0 0 0 2rem;
+}
 .not_found {
   min-height: 90vh;
   display: flex;

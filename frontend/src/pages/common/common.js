@@ -36,7 +36,7 @@ export const getCurrentDate = function() {
 };
 
 export const getTimeDiff = function(start, end) {
-  if (start == end) return '';
+  if (start === end) return '';
   start = start.split(':');
   end = end.split(':');
   let startDate = new Date(0, 0, 0, start[0], start[1], start[2]);

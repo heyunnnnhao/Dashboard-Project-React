@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom';
 import '../style/css/home.scoped.css';
 
-
 function Home() {
   function hide() {
     let arrowid = document.getElementById('arrow');
@@ -24,9 +23,7 @@ function Home() {
           </Link>
         </span>
       </nav>
-
-      
-      <footer className="app_footer">123456 Yunhao He</footer>
+      <footer className="app_footer">&copy; Copyright 2021 Yunhao He</footer>
     </>
   );
 }

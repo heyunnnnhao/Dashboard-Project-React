@@ -7,12 +7,14 @@ body {
   background-color: #282c34;
 }
 
-$headerfootercolor: #232730;
-
-.app_header {
+@mixin appheadersize($headerfootercolor: transparent) {
+  background-color: $headerfootercolor;
   width: 100%;
   height: 6vh;
-  background-color: $headerfootercolor;
+}
+
+.app_header_main {
+  @include appheadersize($headerfootercolor: #232730);
   .logo {
     height: 10%;
     color: grey;
@@ -22,6 +24,12 @@ $headerfootercolor: #232730;
   }
 }
 
+.app_header_modules {
+  @include appheadersize;
+  .left {
+    margin: 0.8rem 1.4rem;
+  }
+}
 
 .not_found {
   min-height: 90vh;

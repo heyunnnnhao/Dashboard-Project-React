@@ -5,7 +5,7 @@
   align-items: center;
   justify-content: center;
   color: white;
-  .logo {
+  .icon {
     height: 40vmin;
     pointer-events: none;
   }
@@ -20,12 +20,12 @@
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .logo {
-    animation: logo-spin infinite 30s linear;
+  .icon {
+    animation: icon-spin infinite 30s linear;
   }
 }
 
-@keyframes logo-spin {
+@keyframes icon-spin {
   from {
     transform: rotate(0deg);
   }

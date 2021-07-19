@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import '../style/css/count_down.scoped.css';
-import logo from '../assets/logo.svg';
+import icon from '../assets/icon.svg';
 
 import { getCurrentTime, getCurrentDate, getTimeDiff } from './common/common.js';
 
@@ -39,7 +39,7 @@ function CountDown() {
 
   return (
     <div className="count_down">
-      <img src={logo} className="logo" alt="logo" />
+      <img src={icon} className="icon" alt="icon" />
       <div className="date">{currentDate}</div>
       <div className="time">
         <span>{tipText}</span>

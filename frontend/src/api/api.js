@@ -1,14 +1,20 @@
-import axios from "axios";
+import axios from 'axios';
 
 const request = axios.create({
-  baseURL:'./example.json',
+  baseURL: './api',
   timeout: 20000,
 });
 
-export const getAllData = () => {
+export const getChartData = () => {
   return request({
     method: 'get',
-    url: '',
+    url: 'chart_data.json',
   });
 };
 
+export const getProductCat = () => {
+  return request({
+    method: 'get',
+    url: 'product_cat.json',
+  });
+};

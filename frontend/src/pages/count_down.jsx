@@ -3,15 +3,15 @@ import { useParams } from 'react-router';
 import '@css/count_down.scoped.css';
 import icon from '@assets/icon.svg';
 
-import { getCurrentTime, getCurrentDate, getTimeDiff } from './common/common.js';
+import { getCurrentTime, getCurrentDate, getTimeDiff } from './common/common';
 
-function CountDown() {
+const CountDown = () => {
   let [currentDate, setDate] = useState(getCurrentDate('year', 'month', 'day'));
   let [timeTillOff, setTimeTillOff] = useState(' ');
   let [tipText, setText] = useState('');
   let { homeDate } = useParams();
 
-  function refresher() {
+  const refresher = () => {
     let now = getCurrentTime('hour', 'minute', 'second');
     let end = '';
     let text = '';
@@ -32,7 +32,7 @@ function CountDown() {
     setDate(getCurrentDate('year', 'month', 'day'));
     setText(text);
     setTimeTillOff(getTimeDiff(now, end));
-  }
+  };
 
   setInterval(() => {
     refresher();
@@ -48,6 +48,6 @@ function CountDown() {
       </div>
     </div>
   );
-}
+};
 
 export default CountDown;

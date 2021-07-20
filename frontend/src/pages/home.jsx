@@ -3,8 +3,8 @@ import '@css/home.scoped.css';
 
 import { getCurrentDate } from './common/common';
 
-function Home() {
-  let homeDate = getCurrentDate('year','month','day');
+const Home = () => {
+  let homeDate = getCurrentDate('year', 'month', 'day');
 
   return (
     <nav className="top_nav">
@@ -24,6 +24,6 @@ function Home() {
       </span>
     </nav>
   );
-}
+};
 
 export default Home;

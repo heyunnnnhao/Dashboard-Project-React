@@ -2,9 +2,9 @@ import { useState, useEffect } from 'react';
 import { useParams } from 'react-router';
 import '@css/clock.scoped.css';
 
-import { getCurrentTime, getCurrentDate } from '@pages/common/common.js';
+import { getCurrentTime, getCurrentDate } from '@pages/common/common';
 
-function Clock() {
+const Clock = () => {
   let [currentDate, setDate] = useState(getCurrentDate('year', 'month', 'day'));
   let [currentTime, setTime] = useState(getCurrentTime('hour', 'minute', 'second'));
   let { homeDate } = useParams();
@@ -31,6 +31,6 @@ function Clock() {
       </div>
     </div>
   );
-}
+};
 
 export default Clock;

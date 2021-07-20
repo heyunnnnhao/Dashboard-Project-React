@@ -1,16 +1,44 @@
 import '@css/request.scoped.css';
 import * as echarts from 'echarts';
 import { useState, useEffect } from 'react';
-import { getAllData } from '@api/api';
+import { Radio } from 'antd';
 
-function Request() {
-  let [user, setUser] = useState('');
+import { getChartData, getProductCat } from '@api/api';
 
-  const getData = () => {
-    return getAllData().then((reply) => {
-      return reply.data;
-    });
+const Select = () => {
+  const [value, setValue] = useState(1);
+  const [item, setItem] = useState(1);
+
+  const onChange = (e) => {
+    console.log('radio checked', e.target.value);
+    setValue(e.target.value);
   };
+
+  const renderButton = (dataSet) => {
+    let items = Object.keys(dataSet).map((i, index) => {
+      return (
+        <Radio className="selectoption" key={index} value={index} style={{ color: dataSet[i] }}>
+          {i}
+        </Radio>
+      );
+    });
+    setItem(items);
+  };
+
+  useEffect(async () => {
+    let cat = await getProductCat();
+    renderButton(cat.data);
+  }, []);
+
+  return (
+    <Radio.Group className="select" onChange={onChange} value={value}>
+      {item}
+    </Radio.Group>
+  );
+};
+
+const Request = () => {
+  let [user, setUser] = useState('');
 
   const renderLowSubItemBarPlot = (dataSet) => {
     let xaxis = [];
@@ -47,7 +75,6 @@ function Request() {
           type: 'category',
           triggerEvent: true,
           data: xaxis,
-          triggerEvent: true,
           axisTick: {
             alignWithLabel: true,
           },
@@ -100,15 +127,16 @@ function Request() {
   };
 
   useEffect(async () => {
-    let chartData = await getData();
-    renderLowSubItemBarPlot(chartData);
+    let chartData = await getChartData();
+    renderLowSubItemBarPlot(chartData.data);
   }, []);
 
   return (
     <>
+      <Select />
       <div id="chart" />
     </>
   );
-}
+};
 
 export default Request;

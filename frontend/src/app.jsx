@@ -7,7 +7,7 @@ import Clock from '@pages/clock';
 import Home from '@pages/home';
 import Request from '@pages/request';
 
-function Whoops() {
+const Whoops = () => {
   let location = useLocation();
   return (
     <div>
@@ -16,9 +16,9 @@ function Whoops() {
       </span>
     </div>
   );
-}
+};
 
-function Header() {
+const Header = () => {
   let location = useLocation();
   if (location.pathname === '/') {
     return (
@@ -37,18 +37,18 @@ function Header() {
       </header>
     );
   }
-}
+};
 
-function Footer() {
+const Footer = () => {
   let location = useLocation();
   if (location.pathname === '/') {
     return <footer className="app_footer">&copy; Copyright 2021 Yunhao He</footer>;
   } else {
     return null;
   }
-}
+};
 
-function App() {
+const App = () => {
   return (
     <Router>
       <Header />
@@ -72,6 +72,6 @@ function App() {
       <Footer />
     </Router>
   );
-}
+};
 
 export default App;

@@ -36,7 +36,7 @@ const CountDown = () => {
 
   setInterval(() => {
     refresher();
-  }, 500);
+  }, 1000);
 
   return (
     <div className="count_down">

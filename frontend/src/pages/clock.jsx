@@ -19,7 +19,7 @@ const Clock = () => {
   useEffect(() => {
     setInterval(() => {
       refresher();
-    }, 500);
+    }, 1000);
   }, []);
 
   return (

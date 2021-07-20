@@ -1,9 +1,18 @@
-import '@css/request.scoped.css';
-import * as echarts from 'echarts';
+// import react
 import { useState, useEffect } from 'react';
+// import npm
+import * as echarts from 'echarts';
 import { Radio } from 'antd';
-
+// import style
+import '@css/request.scoped.css';
+// import assets
+// import api
 import { getChartData, getProductCat } from '@api/api';
+// import helper
+// import components
+
+
+
 
 const Select = () => {
   const [value, setValue] = useState(1);
@@ -140,3 +149,4 @@ const Request = () => {
 };
 
 export default Request;
+

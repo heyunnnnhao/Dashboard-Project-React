@@ -1,7 +1,16 @@
+// import react
 import { Link } from 'react-router-dom';
+// import npm
+// import style
 import '@css/home.scoped.css';
+// import assets
+// import api
+// import helper
+import { getCurrentDate } from '@pages/common/common';
+// import components
 
-import { getCurrentDate } from './common/common';
+
+
 
 const Home = () => {
   let homeDate = getCurrentDate('year', 'month', 'day');
@@ -20,6 +29,9 @@ const Home = () => {
         </Link>
         <Link className="top_nav_item" to="/request">
           Request
+        </Link>
+        <Link className="top_nav_item" to="/test">
+          Test
         </Link>
       </span>
     </nav>

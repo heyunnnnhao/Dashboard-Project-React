@@ -18,3 +18,8 @@ export const getProductCat = () => {
     url: 'product_cat.json',
   });
 };
+
+const baseURL = window.location.origin + '/api/';
+
+export const getProductDataURL = baseURL + 'product_cat.json';
+export const getChartDataURL = baseURL + 'chart_data.json';

@@ -1,8 +1,17 @@
+// import react
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router';
+// import npm
+// import style
 import '@css/clock.scoped.css';
-
+// import assets
+// import api
+// import helper
 import { getCurrentTime, getCurrentDate } from '@pages/common/common';
+// import components
+
+
+
 
 const Clock = () => {
   let [currentDate, setDate] = useState(getCurrentDate('year', 'month', 'day'));

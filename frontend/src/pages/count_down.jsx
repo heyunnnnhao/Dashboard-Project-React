@@ -1,9 +1,18 @@
+// import react
 import { useState } from 'react';
 import { useParams } from 'react-router';
+// import npm
+// import style
 import '@css/count_down.scoped.css';
+// import assets
 import icon from '@assets/icon.svg';
+// import api
+// import helper
+import { getCurrentTime, getCurrentDate, getTimeDiff } from '@pages/common/common';
+// import components
 
-import { getCurrentTime, getCurrentDate, getTimeDiff } from './common/common';
+
+
 
 const CountDown = () => {
   let [currentDate, setDate] = useState(getCurrentDate('year', 'month', 'day'));

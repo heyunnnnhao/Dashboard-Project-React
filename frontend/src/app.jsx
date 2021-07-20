@@ -1,11 +1,21 @@
+// import react
 import { BrowserRouter as Router, Link, Routes, Route, useLocation } from 'react-router-dom';
+// import npm
+// import style
 import '@css/app.css';
+// import assets
 import left from '@assets/left.svg';
-
+// import api
+// import helper
+// import components
 import CountDown from '@pages/count_down';
 import Clock from '@pages/clock';
 import Home from '@pages/home';
 import Request from '@pages/request';
+import Test from '@pages/test';
+
+
+
 
 const Whoops = () => {
   let location = useLocation();
@@ -64,6 +74,9 @@ const App = () => {
         </Route>
         <Route path="/request">
           <Request />
+        </Route>
+        <Route path="/test">
+          <Test />
         </Route>
         <Route path="*">
           <Whoops />

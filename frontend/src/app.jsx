@@ -56,10 +56,10 @@ function App() {
         <Route path="/">
           <Home />
         </Route>
-        <Route path="/count_down">
+        <Route path="/count_down/:homeDate">
           <CountDown />
         </Route>
-        <Route path="/clock/:day">
+        <Route path="/clock/:homeDate">
           <Clock />
         </Route>
         <Route path="/request">

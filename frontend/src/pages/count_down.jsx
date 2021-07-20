@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useParams } from 'react-router';
 import '@css/count_down.scoped.css';
 import icon from '@assets/icon.svg';
 
@@ -8,6 +9,7 @@ function CountDown() {
   let [currentDate, setDate] = useState(getCurrentDate('year', 'month', 'day'));
   let [timeTillOff, setTimeTillOff] = useState(' ');
   let [tipText, setText] = useState('');
+  let { homeDate } = useParams();
 
   function refresher() {
     let now = getCurrentTime('hour', 'minute', 'second');
@@ -39,7 +41,7 @@ function CountDown() {
   return (
     <div className="count_down">
       <img src={icon} className="icon" alt="icon" />
-      <div className="date">{currentDate}</div>
+      <div className="date">{homeDate}</div>
       <div className="time">
         <span>{tipText}</span>
         <span>{timeTillOff}</span>

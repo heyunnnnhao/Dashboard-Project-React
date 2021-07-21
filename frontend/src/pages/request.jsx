@@ -7,16 +7,15 @@ import { Radio } from 'antd';
 import '@css/request.scoped.css';
 // import assets
 // import api
-import { getChartData, getProductCat } from '@api/api';
+import { getChartData, getProductCat, getProductDataURL, getChartDataURL } from '@api/api';
 // import helper
+import { useFetch } from '@pages/common/hooks';
 // import components
-
-
-
 
 const Select = () => {
   const [value, setValue] = useState(1);
-  const [item, setItem] = useState(1);
+  const [item, setItem] = useState('');
+  const { data: productlist, isPending, error } = useFetch(getProductDataURL);
 
   const onChange = (e) => {
     console.log('radio checked', e.target.value);
@@ -35,9 +34,9 @@ const Select = () => {
   };
 
   useEffect(async () => {
-    let cat = await getProductCat();
-    renderButton(cat.data);
-  }, []);
+    if (isPending) setItem('loading..')
+    if (!isPending && productlist) renderButton(productlist);
+  }, [isPending, productlist]);
 
   return (
     <Radio.Group className="select" onChange={onChange} value={value}>
@@ -48,6 +47,7 @@ const Select = () => {
 
 const Request = () => {
   let [user, setUser] = useState('');
+  const { data: chartData, isPending: chatDataPending, error } = useFetch(getChartDataURL);
 
   const renderLowSubItemBarPlot = (dataSet) => {
     let xaxis = [];
@@ -136,9 +136,8 @@ const Request = () => {
   };
 
   useEffect(async () => {
-    let chartData = await getChartData();
-    renderLowSubItemBarPlot(chartData.data);
-  }, []);
+    if (!chatDataPending && chartData) renderLowSubItemBarPlot(chartData);
+  }, [chatDataPending, chartData]);
 
   return (
     <>
@@ -149,4 +148,3 @@ const Request = () => {
 };
 
 export default Request;
-

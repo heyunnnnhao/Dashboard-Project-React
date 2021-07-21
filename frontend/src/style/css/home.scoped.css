@@ -16,6 +16,10 @@
   margin: 0 1rem;
 }
 
+.particle {
+  height: 300px;
+}
+
 .disappear {
   opacity: 0;
 }

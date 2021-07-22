@@ -37,7 +37,7 @@ body {
   color: grey;
   background-color: #232730;
   font-size: 0.8rem;
-  margin: 0 0 0 2rem;
+  padding: 0 0 0 2rem;
 }
 
 .not_found {

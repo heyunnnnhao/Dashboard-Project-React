@@ -12,115 +12,106 @@ import '@css/home.scoped.css';
 import { getCurrentDate } from '@pages/common/common';
 // import components
 
-class Sda extends Component {
-  constructor(props) {
-    super(props);
-
-    this.particlesInit = this.particlesInit.bind(this);
-    this.particlesLoaded = this.particlesLoaded.bind(this);
-  }
-
-  particlesInit(main) {
-    // console.log(main);
+const Sda = () => {
+  const particlesInit = (main) => {
+    console.log(main);
     // you can initialize the tsParticles instance (main) here, adding custom shapes or presets
-  }
+  };
 
-  particlesLoaded(container) {
-    // console.log(container);
-  }
+  const particlesLoaded = (container) => {
+    console.log(container);
+  };
 
-  render() {
-    return (
-      <Particles
-        id="tsparticles"
-        init={this.particlesInit}
-        loaded={this.particlesLoaded}
-        options={{
-          background: {
-            color: {
-              value: '#282c34',
-            },
+  return (
+    <Particles
+      id="tsparticles"
+      init={particlesInit}
+      loaded={particlesLoaded}
+      options={{
+        background: {
+          color: {
+            value: '#282c34',
           },
-          fullScreen: {
-            enable: false,
-            zIndex: 1,
-          },
-          fpsLimit: 60,
-          interactivity: {
-            detectsOn: 'canvas',
-            events: {
-              onClick: {
-                enable: true,
-                mode: 'push',
-              },
-              onHover: {
-                enable: true,
-                mode: 'grab',
-              },
-              resize: true,
-            },
-            modes: {
-              bubble: {
-                distance: 400,
-                duration: 2,
-                opacity: 0.8,
-                size: 40,
-              },
-              push: {
-                quantity: 1,
-              },
-              grab: {
-                distance: 100,
-                duration: 0.4,
-              },
-            },
-          },
-          particles: {
-            color: {
-              value: '#ffffff',
-            },
-            links: {
-              color: '#ffffff',
-              distance: 150,
+        },
+        fullScreen: {
+          enable: false,
+          zIndex: 1,
+        },
+        fpsLimit: 60,
+        interactivity: {
+          detectsOn: 'canvas',
+          events: {
+            onClick: {
               enable: true,
-              opacity: 0.5,
-              width: 1,
+              mode: 'push',
             },
-            collisions: {
+            onHover: {
               enable: true,
+              mode: 'grab',
             },
-            move: {
-              direction: 'none',
-              enable: true,
-              outMode: 'bounce',
-              random: false,
-              speed: 4,
-              straight: false,
+            resize: true,
+          },
+          modes: {
+            bubble: {
+              distance: 400,
+              duration: 2,
+              opacity: 0.8,
+              size: 40,
             },
-            number: {
-              density: {
-                enable: true,
-                value_area: 1000,
-              },
-              value: 80,
+            push: {
+              quantity: 1,
             },
-            opacity: {
-              value: 0.5,
-            },
-            shape: {
-              type: 'circle',
-            },
-            size: {
-              // random: true,
-              value: 2,
+            grab: {
+              distance: 100,
+              duration: 0.4,
             },
           },
-          detectRetina: true,
-        }}
-      />
-    );
-  }
-}
+        },
+        particles: {
+          color: {
+            value: '#ffffff',
+          },
+          links: {
+            color: '#ffffff',
+            distance: 150,
+            enable: true,
+            opacity: 0.5,
+            width: 1,
+          },
+          collisions: {
+            enable: true,
+          },
+          move: {
+            direction: 'none',
+            enable: true,
+            outMode: 'bounce',
+            random: false,
+            speed: 4,
+            straight: false,
+          },
+          number: {
+            density: {
+              enable: true,
+              value_area: 1000,
+            },
+            value: 80,
+          },
+          opacity: {
+            value: 0.5,
+          },
+          shape: {
+            type: 'circle',
+          },
+          size: {
+            // random: true,
+            value: 2,
+          },
+        },
+        detectRetina: true,
+      }}
+    />
+  );
+};
 
 const Home = () => {
   let homeDate = getCurrentDate('year', 'month', 'day');

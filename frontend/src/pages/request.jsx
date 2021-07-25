@@ -7,7 +7,7 @@ import { Radio } from 'antd';
 import '@css/request.scoped.css';
 // import assets
 // import api
-import { getChartData, getProductCat, getProductDataURL, getChartDataURL } from '@api/api';
+import { getProductDataURL, getChartDataURL } from '@api/api';
 // import helper
 import { useFetch } from '@pages/common/hooks';
 // import components

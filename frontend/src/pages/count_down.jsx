@@ -7,7 +7,10 @@ import '@css/count_down.scoped.css';
 // import assets
 import icon from '@assets/icon.svg';
 // import api
+import { getWorkDataURL} from '@api/api';
+
 // import helper
+import { useFetch } from '@pages/common/hooks';
 import { getCurrentTime, getCurrentDate, getTimeDiff } from '@pages/common/common';
 // import components
 
@@ -19,7 +22,10 @@ const CountDown = () => {
   let [timeTillOff, setTimeTillOff] = useState(' ');
   let [tipText, setText] = useState('');
   let { homeDate } = useParams();
+  const { data: workData, isPending, error } = useFetch(getWorkDataURL);
 
+
+  
   const refresher = () => {
     let now = getCurrentTime('hour', 'minute', 'second');
     let end = '';

@@ -9,7 +9,7 @@ import '@css/request.scoped.css';
 // import api
 import { getProductDataURL, getChartDataURL } from '@api/api';
 // import helper
-import { useFetch } from '@pages/common/hooks';
+import { useFetch } from '@pages/common/common';
 // import components
 
 const Select = (props) => {
@@ -18,12 +18,16 @@ const Select = (props) => {
   const { data: typelist, isPending, error } = useFetch(getProductDataURL);
 
   const onChange = (e) => {
-    // console.log('radio checked', e.target.value);
     setValue(e.target.value);
     props.onChange(e.target); // props 的 onChange 指向 parent 的 selectValueChange
   };
 
   const renderButton = (dataSet) => {
+    let selectAll = [
+      <Radio className="selectoption" value={0} text="全部" style={{ color: 'white' }}>
+        全部
+      </Radio>,
+    ];
     let items = Object.keys(dataSet).map((i, index) => {
       return (
         <Radio className="selectoption" key={index} value={index + 1} text={i} style={{ color: dataSet[i] }}>
@@ -31,7 +35,7 @@ const Select = (props) => {
         </Radio>
       );
     });
-    setItem(items);
+    setItem(selectAll.concat(items));
   };
 
   useEffect(async () => {
@@ -41,9 +45,6 @@ const Select = (props) => {
 
   return (
     <Radio.Group className="select" onChange={onChange} value={value}>
-      <Radio className="selectoption" value={0} text="全选" style={{ color: 'white' }}>
-        全选
-      </Radio>
       {item}
     </Radio.Group>
   );

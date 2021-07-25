@@ -10,8 +10,7 @@ import icon from '@assets/icon.svg';
 import { getWorkDataURL} from '@api/api';
 
 // import helper
-import { useFetch } from '@pages/common/hooks';
-import { getCurrentTime, getCurrentDate, getTimeDiff } from '@pages/common/common';
+import { useFetch,getCurrentTime, getCurrentDate, getTimeDiff } from '@pages/common/common';
 // import components
 
 
@@ -25,7 +24,7 @@ const CountDown = () => {
   const { data: workData, isPending, error } = useFetch(getWorkDataURL);
 
 
-  
+
   const refresher = () => {
     let now = getCurrentTime('hour', 'minute', 'second');
     let end = '';

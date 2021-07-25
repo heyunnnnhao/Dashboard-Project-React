@@ -7,7 +7,7 @@ import '@css/test.scoped.css';
 // import api
 import { getProductDataURL, getChartDataURL } from '@api/api';
 // import helper
-import { useFetch } from '@pages/common/hooks';
+import { useFetch } from '@pages/common/common';
 // import components
 
 

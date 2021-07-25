@@ -12,20 +12,21 @@ import { getChartData, getProductCat, getProductDataURL, getChartDataURL } from 
 import { useFetch } from '@pages/common/hooks';
 // import components
 
-const Select = () => {
-  const [value, setValue] = useState(1);
+const Select = (props) => {
+  const [value, setValue] = useState(0);
   const [item, setItem] = useState('');
-  const { data: productlist, isPending, error } = useFetch(getProductDataURL);
+  const { data: typelist, isPending, error } = useFetch(getProductDataURL);
 
   const onChange = (e) => {
-    console.log('radio checked', e.target.value);
+    // console.log('radio checked', e.target.value);
     setValue(e.target.value);
+    props.onChange(e.target); // props 的 onChange 指向 parent 的 selectValueChange
   };
 
   const renderButton = (dataSet) => {
     let items = Object.keys(dataSet).map((i, index) => {
       return (
-        <Radio className="selectoption" key={index} value={index} style={{ color: dataSet[i] }}>
+        <Radio className="selectoption" key={index} value={index + 1} text={i} style={{ color: dataSet[i] }}>
           {i}
         </Radio>
       );
@@ -34,12 +35,15 @@ const Select = () => {
   };
 
   useEffect(async () => {
-    if (isPending) setItem('loading..')
-    if (!isPending && productlist) renderButton(productlist);
-  }, [isPending, productlist]);
+    if (isPending) setItem('   ');
+    if (!isPending && typelist) renderButton(typelist);
+  }, [isPending, typelist]);
 
   return (
     <Radio.Group className="select" onChange={onChange} value={value}>
+      <Radio className="selectoption" value={0} text="全选" style={{ color: 'white' }}>
+        全选
+      </Radio>
       {item}
     </Radio.Group>
   );
@@ -135,13 +139,23 @@ const Request = () => {
     myChart.setOption(option);
   };
 
+  const handelTypeChange = (e) => {
+    let newChartData =
+      e.value == 0
+        ? chartData
+        : chartData.filter((i) => {
+            return i.parent_item_name == e.text;
+          });
+    renderLowSubItemBarPlot(newChartData);
+  };
+
   useEffect(async () => {
     if (!chatDataPending && chartData) renderLowSubItemBarPlot(chartData);
   }, [chatDataPending, chartData]);
 
   return (
     <>
-      <Select />
+      <Select onChange={handelTypeChange} />
       <div id="chart" />
     </>
   );

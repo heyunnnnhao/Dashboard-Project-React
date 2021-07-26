@@ -1,5 +1,9 @@
-#chart {
-  height: 600px;
+#bar_chart {
+  height: 50vh;
+}
+
+#line_chart {
+  height: 50vh;
 }
 
 .select {

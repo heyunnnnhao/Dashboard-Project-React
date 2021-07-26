@@ -24,13 +24,13 @@ const Select = (props) => {
 
   const renderButton = (dataSet) => {
     let selectAll = [
-      <Radio className="selectoption" value={0} text="全部" style={{ color: 'white' }}>
+      <Radio className="selectoption" key={0} value={0} text="全部" style={{ color: 'white' }}>
         全部
       </Radio>,
     ];
     let items = Object.keys(dataSet).map((i, index) => {
       return (
-        <Radio className="selectoption" key={index} value={index + 1} text={i} style={{ color: dataSet[i] }}>
+        <Radio className="selectoption" key={index + 1} value={index + 1} text={i} style={{ color: dataSet[i] }}>
           {i}
         </Radio>
       );
@@ -52,9 +52,10 @@ const Select = (props) => {
 
 const Request = () => {
   let [user, setUser] = useState('');
-  const { data: chartData, isPending: chatDataPending, error } = useFetch(getChartDataURL);
+  const { data: chartData, isPending: chatDataPending, error: chartDataError } = useFetch(getChartDataURL);
+  const { data: typelist, isPending: typePending, error: typeError } = useFetch(getProductDataURL);
 
-  const renderLowSubItemBarPlot = (dataSet) => {
+  const renderBarChart = (dataSet) => {
     let xaxis = [];
     let data = [];
     let color = [];
@@ -63,8 +64,8 @@ const Request = () => {
       data.push(i.count);
       color.push(i.color);
     });
-    let myChart = echarts.init(document.getElementById('chart'));
-    myChart.clear(); // clear canvas before plotting
+    let myChart = echarts.init(document.getElementById('bar_chart'));
+    myChart.clear();
     let option = {
       title: {},
       tooltip: {
@@ -73,8 +74,7 @@ const Request = () => {
           return [pt[0], '10%'];
         },
         axisPointer: {
-          // 坐标轴指示器，坐标轴触发有效
-          type: 'shadow', // 默认为直线，可选为：'line' | 'shadow'
+          type: 'shadow',
         },
         formatter: function(params) {
           let res = '';
@@ -140,6 +140,13 @@ const Request = () => {
     myChart.setOption(option);
   };
 
+  const renderLineChart = (dataSet) => {
+    let myChart = echarts.init(document.getElementById('line_chart'));
+    myChart.clear();
+    let option = {};
+    myChart.setOption(option);
+  };
+
   const handelTypeChange = (e) => {
     let newChartData =
       e.value == 0
@@ -147,17 +154,22 @@ const Request = () => {
         : chartData.filter((i) => {
             return i.parent_item_name == e.text;
           });
-    renderLowSubItemBarPlot(newChartData);
+    renderBarChart(newChartData);
+    renderLineChart(newChartData);
   };
 
   useEffect(async () => {
-    if (!chatDataPending && chartData) renderLowSubItemBarPlot(chartData);
+    if (!chatDataPending && chartData) {
+      renderBarChart(chartData);
+      renderLineChart(chartData);
+    }
   }, [chatDataPending, chartData]);
 
   return (
     <>
       <Select onChange={handelTypeChange} />
-      <div id="chart" />
+      <div id="bar_chart" />
+      <div id="line_chart" />
     </>
   );
 };

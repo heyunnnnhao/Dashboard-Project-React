@@ -34,8 +34,8 @@ const Sda = () => {
           },
         },
         fullScreen: {
-          enable: false,
-          zIndex: 1,
+          enable: true,
+          zIndex: -1,
         },
         fpsLimit: 60,
         interactivity: {
@@ -85,7 +85,7 @@ const Sda = () => {
             direction: 'none',
             enable: true,
             outMode: 'bounce',
-            random: false,
+            random: true,
             speed: 4,
             straight: false,
           },
@@ -118,24 +118,19 @@ const Home = () => {
 
   return (
     <>
-      <nav className="top_nav">
-        <span id="navs" className="navs">
-          <a className="top_nav_item" href="https://github.com/heyunnnnhao" target="_blank" rel="noreferrer">
-            My GitHub
-          </a>
-          <Link className="top_nav_item" to={`/clock/${homeDate}`}>
-            Clock
-          </Link>
-          <Link className="top_nav_item" to={`/count_down/${homeDate}`}>
-            Count Down
-          </Link>
-          <Link className="top_nav_item" to="/request">
-            Request
-          </Link>
-          <Link className="top_nav_item" to="/test">
-            Test
-          </Link>
-        </span>
+      <nav id="navs" className="navs">
+        <Link className="nav_item" to={`/clock/${homeDate}`}>
+          Clock
+        </Link>
+        <Link className="nav_item" to={`/count_down/${homeDate}`}>
+          Count Down
+        </Link>
+        <Link className="nav_item" to="/request">
+          Request
+        </Link>
+        <Link className="nav_item" to="/test">
+          Test
+        </Link>
       </nav>
       <div className="particle">
         <Sda />

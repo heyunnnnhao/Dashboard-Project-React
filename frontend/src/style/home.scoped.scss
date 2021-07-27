@@ -1,26 +1,28 @@
-$svg_size: 40px;
+$nav_item_height: 6rem;
 
-.top_nav {
+.navs {
+  opacity: 1;
+  transition: opacity 0.3s;
   list-style-type: none;
   display: flex;
   flex-direction: row;
-  margin: auto auto auto 1rem;
-  .navs {
-    opacity: 1;
-    transition: opacity 0.3s;
-    .top_nav_item {
-      height: 10%;
-      color: grey;
-      text-decoration: none;
-      line-height: 4rem;
-      margin: 0 1rem;
-    }
+  margin: 1rem auto auto auto;
+  .nav_item {
+    height: $nav_item_height;
+    width: 12rem;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    font-size: 1.5rem;
+    line-height: $nav_item_height;
+    margin: 0 1rem;
+    border-radius: 0.5rem;
+    background-color: rgba(145, 145, 145, 0.4);
   }
 }
 
 .particle {
-  width: 90%;
- 
+  width: 100%;
 }
 
 .disappear {

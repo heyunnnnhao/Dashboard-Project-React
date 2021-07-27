@@ -1,6 +1,7 @@
 // import react
 import { BrowserRouter as Router, Link, Routes, Route, useLocation } from 'react-router-dom';
 // import npm
+import { GithubOutlined } from '@ant-design/icons';
 // import style
 import '@css/app.css';
 // import assets
@@ -13,9 +14,6 @@ import Clock from '@pages/clock';
 import Home from '@pages/home';
 import Request from '@pages/request';
 import Test from '@pages/test';
-
-
-
 
 const Whoops = () => {
   let location = useLocation();
@@ -51,8 +49,18 @@ const Header = () => {
 
 const Footer = () => {
   let location = useLocation();
+  let github = (
+    <a href="https://github.com/heyunnnnhao" target="_blank" rel="noreferrer">
+      <GithubOutlined />
+    </a>
+  );
   if (location.pathname === '/') {
-    return <footer className="app_footer">&copy; Copyright 2021 Yunhao He</footer>;
+    return (
+      <footer className="app_footer">
+        &copy; Copyright 2021 Yunhao He &nbsp;
+        {github}
+      </footer>
+    );
   } else {
     return null;
   }

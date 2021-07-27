@@ -51,7 +51,6 @@ const Select = (props) => {
 };
 
 const Request = () => {
-  let [user, setUser] = useState('');
   const { data: chartData, isPending: chatDataPending, error: chartDataError } = useFetch(getChartDataURL);
   const { data: typelist, isPending: typePending, error: typeError } = useFetch(getProductDataURL);
 
@@ -143,11 +142,35 @@ const Request = () => {
   const renderLineChart = (dataSet) => {
     let myChart = echarts.init(document.getElementById('line_chart'));
     myChart.clear();
-    let option = {};
+    let option = {
+      title: {
+        text: '热点趋势图',
+        left: 'center',
+        textStyle: {
+          fontSize: 14,
+        },
+      },
+      tooltip: {
+        trigger: 'axis',
+      },
+      xAxis: {
+        data: dataSet.dateArr,
+        boundaryGap: false,
+      },
+      yAxis: {},
+      series: [
+        { data: dataSet.data['营销'], name: '营销', type: 'line', color: dataSet.color },
+        { data: dataSet.data['商品'], name: '商品', type: 'line', color: dataSet.color },
+        { data: dataSet.data['服务'], name: '服务', type: 'line', color: dataSet.color },
+        { data: dataSet.data['物流'], name: '物流', type: 'line', color: dataSet.color },
+        { data: dataSet.data['质量'], name: '质量', type: 'line', color: dataSet.color },
+        { data: dataSet.data['退换'], name: '退换', type: 'line', color: dataSet.color },
+      ],
+    };
     myChart.setOption(option);
   };
 
-  const handelTypeChange = (e) => {
+  const handleTypeChange = (e) => {
     let newChartData =
       e.value == 0
         ? chartData
@@ -155,21 +178,21 @@ const Request = () => {
             return i.parent_item_name == e.text;
           });
     renderBarChart(newChartData);
-    renderLineChart(newChartData);
+    // renderLineChart(newChartData);
   };
 
   useEffect(async () => {
     if (!chatDataPending && chartData) {
       renderBarChart(chartData);
-      renderLineChart(chartData);
+      // renderLineChart(chartData);
     }
   }, [chatDataPending, chartData]);
 
   return (
     <>
-      <Select onChange={handelTypeChange} />
+      <Select onChange={handleTypeChange} />
       <div id="bar_chart" />
-      <div id="line_chart" />
+      {/* <div id="line_chart" /> */}
     </>
   );
 };

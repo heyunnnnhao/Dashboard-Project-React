@@ -1,11 +1,10 @@
 // import react
-import { useState, useEffect } from 'react';
 // import npm
 // import style
 import '@css/test.scoped.css';
 // import assets
 // import api
-import { getProductDataURL, getChartDataURL } from '@api/api';
+import {  getChartDataURL } from '@api/api';
 // import helper
 import { useFetch } from '@pages/common/common';
 // import components

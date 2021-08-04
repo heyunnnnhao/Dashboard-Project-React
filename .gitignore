@@ -1,7 +1,7 @@
 .vscode
 #Python:
 *.py[cod]
-
+.DS_Store
 backend/myapp/wsgiprod.py
 backend/log/*
 backend/db.sqlite3

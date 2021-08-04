@@ -1,4 +1,7 @@
 // import react
+import { useSelector, useDispatch } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { actionCreators } from './state/index';
 // import npm
 // import style
 import '@css/test.scoped.css';
@@ -9,9 +12,8 @@ import { getChartDataURL } from '@api/api';
 import { useFetch } from '@pages/utils/common';
 // import components
 
-import { useSelector, useDispatch } from 'react-redux';
-import { bindActionCreators } from 'redux';
-import { actionCreators } from './state/index';
+
+
 const Test = () => {
   const { data: products, isPending, error } = useFetch(getChartDataURL);
   const amount = useSelector((state) => state.bank);

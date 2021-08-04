@@ -9,7 +9,7 @@ import '@css/request.scoped.css';
 // import api
 import { getProductDataURL, getChartDataURL } from '@api/api';
 // import helper
-import { useFetch } from '@pages/common/common';
+import { useFetch } from '@pages/utils/common';
 // import components
 
 const Select = (props) => {

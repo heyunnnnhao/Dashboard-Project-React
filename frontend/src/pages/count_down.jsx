@@ -10,7 +10,7 @@ import icon from '@assets/icon.svg';
 import { getWorkDataURL} from '@api/api';
 
 // import helper
-import { useFetch,getCurrentTime, getCurrentDate, getTimeDiff } from '@pages/common/common';
+import { useFetch,getCurrentTime, getCurrentDate, getTimeDiff } from '@pages/utils/common';
 // import components
 
 
@@ -36,8 +36,8 @@ const CountDown = () => {
     } else if (currentHour < 14 && getCurrentTime('minute') <= 30) {
       end = '13:30:00';
       text = 'noon rest - ';
-    } else if (currentHour < 18) {
-      end = '18:00:00';
+    } else if (currentHour < 19) {
+      end = '19:00:00';
       text = 'Off work - ';
     } else {
       end = now;

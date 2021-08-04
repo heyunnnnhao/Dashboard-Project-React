@@ -7,7 +7,7 @@ import '@css/clock.scoped.css';
 // import assets
 // import api
 // import helper
-import { getCurrentTime, getCurrentDate } from '@pages/common/common';
+import { getCurrentTime, getCurrentDate } from '@pages/utils/common';
 // import components
 
 

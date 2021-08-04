@@ -9,7 +9,7 @@ import '@css/home.scoped.css';
 // import assets
 // import api
 // import helper
-import { getCurrentDate } from '@pages/common/common';
+import { getCurrentDate } from '@pages/utils/common';
 // import components
 
 const Sda = () => {

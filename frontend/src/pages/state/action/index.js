@@ -10,7 +10,6 @@ export const depositMoney = (amount) => {
 
 
 export const withdrawMoney = (amount) => {
-    console.log(amount, "Lol")
     return (dispatch) => {
         dispatch({
             type: "withdraw",

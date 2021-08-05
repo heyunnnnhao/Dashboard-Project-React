@@ -7,13 +7,13 @@ import { actionCreators } from './state/index';
 import '@css/test.scoped.css';
 // import assets
 // import api
-import { getChartDataURL } from '@api/api';
+import { getGithubUserURL } from '@api/api';
 // import helper
 import { useFetch } from '@pages/utils/common';
 // import components
 
 const Test = () => {
-  const { data: products, isPending, error } = useFetch(getChartDataURL);
+  const { data: users, isPending, error } = useFetch(getGithubUserURL);
   let amount = useSelector((state) => state.bank);
   let dispatch = useDispatch();
   const { depositMoney, withdrawMoney } = bindActionCreators(actionCreators, dispatch);
@@ -21,26 +21,27 @@ const Test = () => {
   let list = '';
   if (isPending) list = <div>Loading</div>;
   if (error) list = <div>{error}</div>;
-  if (products) {
-    console.log(amount);
-    list = products.slice(0, amount).map((i, index) => {
+  if (users) {
+    let limit = amount >= 0 ? amount : 0;
+    list = users.slice(0, limit).map((i, index) => {
       return (
-        <article key={index}>
-          <h2>{i.item_name}</h2>
-          <p>ID: {i.item_id}</p>
-          <div>Count: {i.count}</div>
-        </article>
+        <div key={index} className="user">
+          <div className="username">{i.login}</div>
+          <a href={i.html_url} target='_blank'>
+            <img src={i.avatar_url} alt={i.login + 'avatar'} className="avatar" />
+          </a>
+        </div>
       );
     });
   }
   return (
     <>
-      <div className="App">
+      <div className="control">
         <h1>{amount}</h1>
         <button onClick={() => depositMoney(1)}>Deposit</button>
         <button onClick={() => withdrawMoney(1)}>Withdraw</button>
       </div>
-      <div>{list}</div>
+      <div className="container">{list}</div>
     </>
   );
 };

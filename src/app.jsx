@@ -1,5 +1,5 @@
 // import react
-import { BrowserRouter as Router, Link, Routes, Route, useLocation } from 'react-router-dom';
+import { HashRouter, BrowserRouter as Router, Link, Routes, Route, useLocation } from 'react-router-dom';
 // import npm
 import { GithubOutlined } from '@ant-design/icons';
 // import style
@@ -68,30 +68,32 @@ const Footer = () => {
 
 const App = () => {
   return (
-    <Router>
-      <Header />
-      <Routes>
-        <Route path="/">
-          <Home />
-        </Route>
-        <Route path="/count_down/:homeDate">
-          <CountDown />
-        </Route>
-        <Route path="/clock/:homeDate">
-          <Clock />
-        </Route>
-        <Route path="/request">
-          <Request />
-        </Route>
-        <Route path="/test">
-          <Test />
-        </Route>
-        <Route path="*">
-          <Whoops />
-        </Route>
-      </Routes>
-      <Footer />
-    </Router>
+    // <HashRouter>
+      <Router>
+        <Header />
+        <Routes>
+          <Route path="/">
+            <Home />
+          </Route>
+          <Route path="/count_down/:homeDate">
+            <CountDown />
+          </Route>
+          <Route path="/clock/:homeDate">
+            <Clock />
+          </Route>
+          <Route path="/request">
+            <Request />
+          </Route>
+          <Route path="/test">
+            <Test />
+          </Route>
+          <Route path="*">
+            <Whoops />
+          </Route>
+        </Routes>
+        <Footer />
+      </Router>
+    // /HashRouter>
   );
 };
 

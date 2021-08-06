@@ -2,6 +2,7 @@
   "name": "reactparactice",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://heyunnnhao.github.io",
   "devDependencies": {
     "babel-cli": "^6.18.0",
     "babel-preset-latest": "^6.16.0",
@@ -36,6 +37,8 @@
     "web-vitals": "^2.1.0"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "craco start",
     "build": "craco build",
     "test": "craco test"

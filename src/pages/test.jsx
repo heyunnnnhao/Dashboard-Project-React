@@ -27,7 +27,7 @@ const Test = () => {
       return (
         <div key={index} className="user">
           <div className="username">{i.login}</div>
-          <a href={i.html_url} target='_blank'>
+          <a href={i.html_url} target="_blank" rel="noreferrer">
             <img src={i.avatar_url} alt={i.login + 'avatar'} className="avatar" />
           </a>
         </div>

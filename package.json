@@ -2,7 +2,6 @@
   "name": "reactparactice",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://heyunnnnhao.github.io",
   "devDependencies": {
     "babel-cli": "^6.18.0",
     "babel-preset-latest": "^6.16.0",

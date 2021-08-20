@@ -2,7 +2,11 @@
 import { useState, useEffect } from 'react';
 // import npm
 import * as echarts from 'echarts';
-import { Radio } from 'antd';
+import Radio from '@material-ui/core/Radio';
+import RadioGroup from '@material-ui/core/RadioGroup';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import FormControl from '@material-ui/core/FormControl';
+import FormLabel from '@material-ui/core/FormLabel';
 // import style
 import '@css/request.scoped.css';
 // import assets
@@ -12,28 +16,23 @@ import { getProductDataURL, getChartDataURL } from '@api/api';
 import { useFetch } from '@pages/utils/common';
 // import components
 
-const Select = (props) => {
+const Select = ({ onChange }) => {
   const [value, setValue] = useState(0);
   const [item, setItem] = useState('');
   const { data: typelist, isPending, error } = useFetch(getProductDataURL);
 
-  const onChange = (e) => {
+  const onLabelChange = (e) => {
     setValue(e.target.value);
-    props.onChange(e.target); // props 的 onChange 指向 parent 的 selectValueChange
+    onChange(e.target.value); // props 的 onChange 指向 parent 的 selectValueChange
   };
 
   const renderButton = (dataSet) => {
+    console.log(dataSet);
     let selectAll = [
-      <Radio className="selectoption" key={0} value={0} text="全部" style={{ color: 'white' }}>
-        全部
-      </Radio>,
+      <FormControlLabel className="selectoption" key={0} value="全部" label="全部" control={<Radio />} />,
     ];
     let items = Object.keys(dataSet).map((i, index) => {
-      return (
-        <Radio className="selectoption" key={index + 1} value={index + 1} text={i} style={{ color: dataSet[i] }}>
-          {i}
-        </Radio>
-      );
+      return <FormControlLabel className="selectoption" key={index + 1} value={i} label={i} control={<Radio />} />;
     });
     setItem(selectAll.concat(items));
   };
@@ -44,9 +43,9 @@ const Select = (props) => {
   }, [isPending, typelist]);
 
   return (
-    <Radio.Group className="select" onChange={onChange} value={value}>
+    <RadioGroup row className="select" onChange={onLabelChange} value={value}>
       {item}
-    </Radio.Group>
+    </RadioGroup>
   );
 };
 
@@ -172,10 +171,10 @@ const Request = () => {
 
   const handleTypeChange = (e) => {
     let newChartData =
-      e.value == 0
+      e == '全部'
         ? chartData
         : chartData.filter((i) => {
-            return i.parent_item_name == e.text;
+            return i.parent_item_name == e;
           });
     renderBarChart(newChartData);
     // renderLineChart(newChartData);

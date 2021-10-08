@@ -1,7 +1,6 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans',
-    'Droid Sans', 'Helvetica Neue', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #282c34;
@@ -9,27 +8,16 @@ body {
 
 $headerfootercolor: #232730;
 
-@mixin appheadersize($headerfootercolor: transparent) {
-  background-color: $headerfootercolor;
+.app_header {
+  background: transparent;
   width: 100%;
   height: 6vh;
-}
-
-.app_header_main {
-  @include appheadersize($headerfootercolor: #232730);
-  .logo {
+  .back {
     height: 10%;
     color: grey;
     text-decoration: none;
     line-height: 6vh;
     margin: 0 2rem;
-  }
-}
-
-.app_header_modules {
-  @include appheadersize;
-  .left {
-    margin: 0.8rem 1.4rem;
   }
 }
 
@@ -44,10 +32,11 @@ $headerfootercolor: #232730;
   background-color: $headerfootercolor;
   font-size: 0.8rem;
   padding: 0 0 0 2rem;
-  a{
+  a {
     text-decoration: none;
   }
 }
+
 .not_found {
   min-height: 90vh;
   display: flex;

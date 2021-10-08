@@ -1,9 +1,7 @@
 // import react
-import { Component } from 'react';
 import { Link } from 'react-router-dom';
 // import npm
 import Particles from 'react-tsparticles';
-
 // import style
 import './home.scss';
 // import assets
@@ -13,20 +11,9 @@ import { getCurrentDate } from '@src/utils/common';
 // import components
 
 const Sda = () => {
-  const particlesInit = (main) => {
-    // console.log(main);
-    // you can initialize the tsParticles instance (main) here, adding custom shapes or presets
-  };
-
-  const particlesLoaded = (container) => {
-    // console.log(container);
-  };
-
   return (
     <Particles
       id="tsparticles"
-      init={particlesInit}
-      loaded={particlesLoaded}
       options={{
         background: {
           color: {

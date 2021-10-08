@@ -26,23 +26,13 @@ const Whoops = () => {
 
 const Header = () => {
   let location = useLocation();
-  if (location.pathname === '/') {
-    return (
-      <header className='app_header_main'>
-        <Link className='logo' to='/'>
-          Main
-        </Link>
-      </header>
-    );
-  } else {
-    return (
-      <header className='app_header_modules '>
-        <Link className='back' to='/'>
-          <img src={left} className='left' alt='left' />
-        </Link>
-      </header>
-    );
-  }
+  return (
+    <header className='app_header'>
+      <Link className='back' to='/'>
+        {location.pathname === '/' ? 'Main' : <img src={left} className='logo' alt='left' />}
+      </Link>
+    </header>
+  );
 };
 
 const Footer = () => {

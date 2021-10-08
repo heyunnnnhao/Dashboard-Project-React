@@ -3,7 +3,7 @@ import { HashRouter, BrowserRouter as Router, Link, Routes, Route, useLocation }
 // import npm
 import { GithubOutlined } from '@ant-design/icons';
 // import style
-import '@css/app.css';
+import './app.scss';
 // import assets
 import left from '@assets/left.svg';
 // import api
@@ -12,7 +12,6 @@ import left from '@assets/left.svg';
 import CountDown from '@pages/count_down';
 import Clock from '@pages/clock';
 import Home from '@pages/home';
-import Request from '@pages/request';
 import Test from '@pages/test';
 
 const Whoops = () => {
@@ -80,9 +79,6 @@ const App = () => {
           </Route>
           <Route path="/clock/:homeDate">
             <Clock />
-          </Route>
-          <Route path="/request">
-            <Request />
           </Route>
           <Route path="/test">
             <Test />

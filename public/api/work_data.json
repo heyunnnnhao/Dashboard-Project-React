@@ -1,8 +1,7 @@
 {
   "company_name": "京东",
   "company_name_short": "JD",
-  "start_time": 9,
+  "start_time": 10,
   "lunch_time": 12,
-  "off_time": 21,
-  "color": "red"
+  "off_time": 19
 }

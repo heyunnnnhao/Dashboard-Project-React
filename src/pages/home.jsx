@@ -125,9 +125,6 @@ const Home = () => {
         <Link className="nav_item" to={`/count_down/${homeDate}`}>
           Count Down
         </Link>
-        <Link className="nav_item" to="/request">
-          Request
-        </Link>
         <Link className="nav_item" to="/test">
           Test
         </Link>

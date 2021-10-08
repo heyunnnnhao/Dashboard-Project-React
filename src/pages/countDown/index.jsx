@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { useParams } from 'react-router';
 // import npm
 // import style
-import './countDown.scss';
+import './index.scss';
 // import assets
 import icon from '@assets/icon.svg';
 // import api

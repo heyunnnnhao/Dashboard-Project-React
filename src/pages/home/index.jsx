@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 // import npm
 import Particles from 'react-tsparticles';
 // import style
-import './home.scss';
+import './index.scss';
 // import assets
 // import api
 // import helper

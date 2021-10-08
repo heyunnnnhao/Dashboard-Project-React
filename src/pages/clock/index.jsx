@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import { useParams } from 'react-router';
 // import npm
 // import style
-import './clock.scss';
+import './index.scss';
 // import assets
 // import api
 // import helper

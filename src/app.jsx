@@ -8,17 +8,14 @@ import left from './assets/left.svg';
 // import api
 // import helper
 // import components
-import CountDown from './pages/countDown/index.jsx';
-import Clock from './pages/clock/index.jsx';
-import Home from './pages/home/index.jsx';
-import Test from './pages/test/index.jsx';
+import { CountDown, Clock, Home, Test } from './pages/index.ts';
 
 const Whoops = () => {
   let location = useLocation();
   return (
     <div>
       <span className='not_found'>
-        Location <u>{location.pathname}</u> does not exist!
+        Location <span>{location.pathname}</span> does not exist!
       </span>
     </div>
   );

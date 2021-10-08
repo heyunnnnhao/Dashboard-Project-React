@@ -4,7 +4,7 @@ import { bindActionCreators } from 'redux';
 import { actionCreators } from '../../state/index';
 // import npm
 // import style
-import './test.scss';
+import './index.scss';
 // import assets
 // import api
 import { getGithubUserURL } from '@api/api';

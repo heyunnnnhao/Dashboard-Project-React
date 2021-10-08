@@ -5,11 +5,11 @@ import { Link } from 'react-router-dom';
 import Particles from 'react-tsparticles';
 
 // import style
-import '@css/home.scoped.css';
+import './home.scss';
 // import assets
 // import api
 // import helper
-import { getCurrentDate } from '@pages/utils/common';
+import { getCurrentDate } from '@src/utils/common';
 // import components
 
 const Sda = () => {

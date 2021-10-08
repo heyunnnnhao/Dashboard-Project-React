@@ -3,15 +3,12 @@ import { useState, useEffect } from 'react';
 import { useParams } from 'react-router';
 // import npm
 // import style
-import '@css/clock.scoped.css';
+import './clock.scss';
 // import assets
 // import api
 // import helper
-import { getCurrentTime, getCurrentDate } from '@pages/utils/common';
+import { getCurrentTime, getCurrentDate } from '@src/utils/common';
 // import components
-
-
-
 
 const Clock = () => {
   let [currentDate, setDate] = useState(getCurrentDate('year', 'month', 'day'));
@@ -32,9 +29,9 @@ const Clock = () => {
   }, []);
 
   return (
-    <div className="clock">
-      <div className="time">{currentTime}</div>
-      <div className="date">
+    <div className='clock'>
+      <div className='time'>{currentTime}</div>
+      <div className='date'>
         <span>{homeDate}</span>&ensp;
         <span>{getCurrentDate('week')}</span>
       </div>

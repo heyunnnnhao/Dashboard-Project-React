@@ -3,18 +3,15 @@ import { useState } from 'react';
 import { useParams } from 'react-router';
 // import npm
 // import style
-import '@css/count_down.scoped.css';
+import './countDown.scss';
 // import assets
 import icon from '@assets/icon.svg';
 // import api
-import { getWorkDataURL} from '@api/api';
+import { getWorkDataURL } from '@api/api';
 
 // import helper
-import { useFetch,getCurrentTime, getCurrentDate, getTimeDiff } from '@pages/utils/common';
+import { useFetch, getCurrentTime, getCurrentDate, getTimeDiff } from '@src/utils/common';
 // import components
-
-
-
 
 const CountDown = () => {
   let [currentDate, setDate] = useState(getCurrentDate('year', 'month', 'day'));
@@ -22,8 +19,6 @@ const CountDown = () => {
   let [tipText, setText] = useState('');
   let { homeDate } = useParams();
   const { data: workData, isPending, error } = useFetch(getWorkDataURL);
-
-
 
   const refresher = () => {
     let now = getCurrentTime('hour', 'minute', 'second');
@@ -53,10 +48,10 @@ const CountDown = () => {
   }, 1000);
 
   return (
-    <div className="count_down">
-      <img src={icon} className="icon" alt="icon" />
-      <div className="date">{homeDate}</div>
-      <div className="time">
+    <div className='count_down'>
+      <img src={icon} className='icon' alt='icon' />
+      <div className='date'>{homeDate}</div>
+      <div className='time'>
         <span>{tipText}</span>
         <span>{timeTillOff}</span>
       </div>

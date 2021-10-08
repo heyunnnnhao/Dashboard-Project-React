@@ -41,8 +41,6 @@ export const useFetch = (url) => {
   return { data, isPending, error };
 };
 
-
-
 // Helpers
 const formatTime = (time) => {
   time = time < 10 ? '0' + time : time;
@@ -96,6 +94,3 @@ export const getTimeDiff = function(start, end) {
   if (hours < 0) hours = hours + 24;
   return formatTime(hours) + ':' + formatTime(minutes) + ':' + formatTime(seconds);
 };
-
-
-

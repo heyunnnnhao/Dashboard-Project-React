@@ -1,16 +1,9 @@
-// import react
 import { useSelector, useDispatch } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { actionCreators } from '../../state/index';
-// import npm
-// import style
 import './index.scss';
-// import assets
-// import api
 import { getGithubUserURL } from '@api/api';
-// import helper
 import { useFetch } from '@src/utils/common';
-// import components
 
 const Test = () => {
   const { data: users, isPending, error } = useFetch(getGithubUserURL);

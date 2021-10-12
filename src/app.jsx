@@ -1,13 +1,6 @@
-// import react
 import { BrowserRouter as Router, Link, Routes, Route, useLocation } from 'react-router-dom';
-// import npm
-// import style
 import './app.scss';
-// import assets
 import left from './assets/left.svg';
-// import api
-// import helper
-// import components
 import { CountDown, Clock, Home, Test } from './pages/index.ts';
 
 const Whoops = () => {

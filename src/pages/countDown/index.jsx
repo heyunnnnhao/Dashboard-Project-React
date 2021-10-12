@@ -1,17 +1,9 @@
-// import react
 import { useState } from 'react';
 import { useParams } from 'react-router';
-// import npm
-// import style
 import './index.scss';
-// import assets
 import icon from '@assets/icon.svg';
-// import api
 import { getWorkDataURL } from '@api/api';
-
-// import helper
 import { useFetch, getCurrentTime, getCurrentDate, getTimeDiff } from '@src/utils/common';
-// import components
 
 const CountDown = () => {
   let [currentDate, setDate] = useState(getCurrentDate('year', 'month', 'day'));

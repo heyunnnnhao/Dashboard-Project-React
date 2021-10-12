@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import Particles from 'react-tsparticles';
-import './index.scss';
+import './style.scss';
 import { getCurrentDate } from '@src/utils/common';
 
 const Sda = () => {

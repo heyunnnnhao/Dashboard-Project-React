@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router';
-import './index.scss';
+import './style.scss';
 import { getCurrentTime, getCurrentDate } from '@src/utils/common';
 
 const Clock = () => {

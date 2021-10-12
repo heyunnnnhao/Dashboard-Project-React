@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useParams } from 'react-router';
-import './index.scss';
+import './style.scss';
 import icon from '@assets/icon.svg';
 import { getWorkDataURL } from '@api/api';
 import { useFetch, getCurrentTime, getCurrentDate, getTimeDiff } from '@src/utils/common';

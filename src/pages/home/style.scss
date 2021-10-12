@@ -1,11 +1,12 @@
 $nav_item_height: 6rem;
 
 .navs {
-  opacity: 1;
   transition: opacity 0.3s;
   list-style-type: none;
   display: flex;
   flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap ;
   margin: 1rem auto auto auto;
   .nav_item {
     height: $nav_item_height;
@@ -15,8 +16,7 @@ $nav_item_height: 6rem;
     text-align: center;
     font-size: 1.5rem;
     line-height: $nav_item_height;
-    margin: 0 1rem;
-    border-radius: 0.2rem;
+    margin: 2vw 1vw;
     background-color: rgba(78, 78, 78, 0.8);
   }
 }

@@ -3,7 +3,7 @@ import Particles from 'react-tsparticles';
 import './style.scss';
 import { getCurrentDate } from '@src/utils/common';
 
-const Sda = () => {
+const ParticlesEffect = () => {
   return (
     <Particles
       id="tsparticles"
@@ -110,7 +110,7 @@ const Home = () => {
         </Link>
       </nav>
       <div className="particle">
-        <Sda />
+        <ParticlesEffect />
       </div>
     </>
   );

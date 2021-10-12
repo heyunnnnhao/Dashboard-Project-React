@@ -79,7 +79,7 @@ export const getCurrentDate = function() {
   return arr.join('-');
 };
 
-export const getTimeDiff = function(start, end) {
+export const getTimeDiff = (start, end) => {
   if (start === end) return '';
   start = start.split(':');
   end = end.split(':');
@@ -93,4 +93,8 @@ export const getTimeDiff = function(start, end) {
   let seconds = Math.floor(diff / 1000);
   if (hours < 0) hours = hours + 24;
   return formatTime(hours) + ':' + formatTime(minutes) + ':' + formatTime(seconds);
+};
+
+export const imgOnError = (e) => {
+  console.log(e);
 };

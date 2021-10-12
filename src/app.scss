@@ -6,32 +6,36 @@ body {
   background-color: #282c34;
 }
 
-$headerfootercolor: #232730;
-
 .app_header {
   background: transparent;
   width: 100%;
   height: 6vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
   .back {
-    height: 10%;
+    height: 4vh;
     color: grey;
     text-decoration: none;
     line-height: 6vh;
-    margin: 0 2rem;
+    margin: 0 2vw;
+  }
+  .logo {
+    height: 100%;
   }
 }
 
 .app_footer {
-  text-align: left;
   position: fixed;
   bottom: 0;
   width: 100%;
-  height: 2rem;
-  line-height: 2rem;
+  height: 2vw;
+  line-height: 2vw;
   color: grey;
-  background-color: $headerfootercolor;
-  font-size: 0.8rem;
-  padding: 0 0 0 2rem;
+  background-color: #232730;
+  font-size: 1vw;
+  padding: 0 0 0 2vw;
   a {
     text-decoration: none;
   }

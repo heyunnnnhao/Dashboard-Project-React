@@ -2,15 +2,12 @@ import { useState } from 'react';
 import { useParams } from 'react-router';
 import './style.scss';
 import icon from '@assets/icon.svg';
-import { getWorkDataURL } from '@api/api';
-import { useFetch, getCurrentTime, getCurrentDate, getTimeDiff } from '@src/utils/common';
+import { getCurrentTime, getTimeDiff } from '@src/utils/common';
 
 const CountDown = () => {
-  let [currentDate, setDate] = useState(getCurrentDate('year', 'month', 'day'));
   let [timeTillOff, setTimeTillOff] = useState(' ');
   let [tipText, setText] = useState('');
   let { homeDate } = useParams();
-  const { data: workData, isPending, error } = useFetch(getWorkDataURL);
 
   const refresher = () => {
     let now = getCurrentTime('hour', 'minute', 'second');
@@ -30,7 +27,6 @@ const CountDown = () => {
       end = now;
       text = 'You are off!';
     }
-    setDate(getCurrentDate('year', 'month', 'day'));
     setText(text);
     setTimeTillOff(getTimeDiff(now, end));
   };

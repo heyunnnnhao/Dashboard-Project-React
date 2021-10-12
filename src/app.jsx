@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Link, Routes, Route, useLocation } from 'react-router-dom';
 import './app.scss';
 import left from './assets/left.svg';
+import { imgOnError } from '@src/utils/common';
 import { CountDown, Clock, Home, Test } from './pages/index.ts';
 
 const Whoops = () => {
@@ -19,7 +20,7 @@ const Header = () => {
   return (
     <header className='app_header'>
       <Link className='back' to='/'>
-        {location.pathname === '/' ? 'Main' : <img src={left} className='logo' alt='left' />}
+        <img src={location.pathname === '/' ? null : left} className='logo' alt='left' />
       </Link>
     </header>
   );
@@ -27,8 +28,9 @@ const Header = () => {
 
 const Footer = () => {
   let location = useLocation();
+  let date = new Date();
   if (location.pathname === '/') {
-    return <footer className='app_footer'>&copy; Copyright 2021 Yunhao He &nbsp;</footer>;
+    return <footer className='app_footer'>&copy; Copyright 2020-{date.getFullYear()} @Yunhao He &nbsp;</footer>;
   } else {
     return null;
   }

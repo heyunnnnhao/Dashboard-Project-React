@@ -5,7 +5,6 @@ import { useTime, getCurrentDate } from '@src/utils/common';
 const Clock = () => {
   const { hour, minute, second } = useTime();
   const homeDate = getCurrentDate('year', 'month', 'day');
-
   return (
     <div className='clock'>
       <div className='time'>{`${hour}:${minute}:${second}`}</div>

@@ -99,7 +99,7 @@ const Home = () => {
   return (
     <>
       <nav id="navs" className="navs">
-        <Link className="nav_item" to={`/clock/${homeDate}`}>
+        <Link className="nav_item" to={`/clock`}>
           Clock
         </Link>
         <Link className="nav_item" to={`/count_down/${homeDate}`}>

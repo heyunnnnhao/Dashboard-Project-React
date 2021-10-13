@@ -20,7 +20,7 @@ const Header = () => {
   return (
     <header className='app_header'>
       <Link className='back' to='/'>
-        {location.pathname === '/' ? <FormatAlignCenterSharpIcon fontSize='large' /> : <ArrowBackIosSharpIcon fontSize='large' />}
+        {location.pathname === '/' ? <FormatAlignCenterSharpIcon /> : <ArrowBackIosSharpIcon />}
       </Link>
     </header>
   );
@@ -47,7 +47,7 @@ export default () => {
         <Route path='/count_down/:homeDate'>
           <CountDown />
         </Route>
-        <Route path='/clock/:homeDate'>
+        <Route path='/clock'>
           <Clock />
         </Route>
         <Route path='/test'>

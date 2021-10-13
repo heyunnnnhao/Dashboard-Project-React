@@ -1,11 +1,10 @@
 import { useState, useEffect } from 'react';
-import { useParams } from 'react-router';
 import './style.scss';
 import { useTime, getCurrentDate } from '@src/utils/common';
 
 const Clock = () => {
   const { hour, minute, second } = useTime();
-  let { homeDate } = useParams();
+  const homeDate = getCurrentDate('year', 'month', 'day');
 
   return (
     <div className='clock'>

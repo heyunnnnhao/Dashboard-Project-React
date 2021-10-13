@@ -42,9 +42,9 @@ export const useFetch = (url) => {
 };
 
 export const useTime = () => {
-  const [hour, setHour] = useState(null);
-  const [minute, setMinute] = useState(null);
-  const [second, setSecond] = useState(null);
+  const [hour, setHour] = useState('');
+  const [minute, setMinute] = useState('');
+  const [second, setSecond] = useState('');
 
   const updateTime = () => {
     let date = new Date();
@@ -57,32 +57,24 @@ export const useTime = () => {
     updateTime();
     let tick = setInterval(() => {
       updateTime();
-    }, 100);
+    }, 500);
     return () => clearInterval(tick);
   }, []);
 
   return { hour, minute, second };
 };
 
+export const useTimeDiff = (target)=>{
+
+}
+
+export const useDateDiff = (target)=>{
+
+}
+
 // Helpers
 const formatTime = (time) => {
-  time = time < 10 ? '0' + time : time;
-  return time;
-};
-
-export const getCurrentTime = function() {
-  let args = Object.values(arguments);
-  let date = new Date();
-  let time = {
-    hour: formatTime(date.getHours()),
-    minute: formatTime(date.getMinutes()),
-    second: formatTime(date.getSeconds()),
-  };
-  let arr = [];
-  args.forEach((i) => {
-    arr.push(time[i]);
-  });
-  return arr.join(':');
+  return time == null ? '' : time < 10 ? '0' + time : time;
 };
 
 export const getCurrentDate = function() {

@@ -41,6 +41,29 @@ export const useFetch = (url) => {
   return { data, isPending, error };
 };
 
+export const useTime = () => {
+  const [hour, setHour] = useState(null);
+  const [minute, setMinute] = useState(null);
+  const [second, setSecond] = useState(null);
+
+  const updateTime = () => {
+    let date = new Date();
+    setHour(formatTime(date.getHours()));
+    setMinute(formatTime(date.getMinutes()));
+    setSecond(formatTime(date.getSeconds()));
+  };
+
+  useEffect(() => {
+    updateTime();
+    let tick = setInterval(() => {
+      updateTime();
+    }, 100);
+    return () => clearInterval(tick);
+  }, []);
+
+  return { hour, minute, second };
+};
+
 // Helpers
 const formatTime = (time) => {
   time = time < 10 ? '0' + time : time;

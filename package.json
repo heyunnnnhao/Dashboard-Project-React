@@ -16,6 +16,7 @@
     "@craco/craco": "^6.2.0",
     "@emotion/react": "latest",
     "@emotion/styled": "latest",
+    "@mui/icons-material": "^5.0.3",
     "@mui/material": "latest",
     "@reduxjs/toolkit": "^1.6.1",
     "@testing-library/jest-dom": "^5.14.1",

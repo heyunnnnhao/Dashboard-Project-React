@@ -1,7 +1,8 @@
 import { BrowserRouter as Router, Link, Routes, Route, useLocation } from 'react-router-dom';
 import './app.scss';
-import left from './assets/left.svg';
 import { CountDown, Clock, Home, Test } from './pages/index.ts';
+import ArrowBackIosSharpIcon from '@mui/icons-material/ArrowBackIosSharp';
+import FormatAlignCenterSharpIcon from '@mui/icons-material/FormatAlignCenterSharp';
 
 const Whoops = () => {
   let location = useLocation();
@@ -19,7 +20,7 @@ const Header = () => {
   return (
     <header className='app_header'>
       <Link className='back' to='/'>
-        <img src={location.pathname === '/' ? null : left} className='logo' alt='left' />
+        {location.pathname === '/' ? <FormatAlignCenterSharpIcon fontSize='large' /> : <ArrowBackIosSharpIcon fontSize='large' />}
       </Link>
     </header>
   );

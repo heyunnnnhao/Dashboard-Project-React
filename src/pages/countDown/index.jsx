@@ -2,22 +2,23 @@ import { useState } from 'react';
 import { useParams } from 'react-router';
 import './style.scss';
 import icon from '@assets/icon.svg';
-import { getCurrentTime, getTimeDiff } from '@src/utils/common';
+import { getCurrentTime, getTimeDiff, useTime } from '@src/utils/common';
 
 const CountDown = () => {
   let [timeTillOff, setTimeTillOff] = useState(' ');
   let [tipText, setText] = useState('');
+  const { hour, minute, second } = useTime();
   let { homeDate } = useParams();
 
   const refresher = () => {
-    let now = getCurrentTime('hour', 'minute', 'second');
+    let now = `${hour}:${minute}:${second}`;
     let end = '';
     let text = '';
-    let currentHour = getCurrentTime('hour');
+    let currentHour = hour;
     if (currentHour < 12) {
       end = '12:00:00';
       text = 'To lunch - ';
-    } else if (currentHour < 14 && getCurrentTime('minute') <= 30) {
+    } else if (currentHour < 14 && hour <= 30) {
       end = '13:30:00';
       text = 'noon rest - ';
     } else if (currentHour < 19) {

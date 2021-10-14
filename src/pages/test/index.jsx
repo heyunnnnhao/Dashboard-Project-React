@@ -1,9 +1,7 @@
 import { useSelector, useDispatch } from 'react-redux';
-import { bindActionCreators } from 'redux';
-import { actionCreators } from '../../state/index';
 import './style.scss';
-import { getGithubUserURL } from '@api/api';
-import { useFetch } from '@src/utils/common';
+import { getGithubUserURL } from 'Api/api';
+import { useFetch } from 'src/utils/common';
 import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
 

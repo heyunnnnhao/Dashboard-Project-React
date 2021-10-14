@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import Particles from 'react-tsparticles';
 import './style.scss';
-import { getCurrentDate } from '@src/utils/common';
+import { getCurrentDate } from 'src/utils/common';
 
 const ParticlesEffect = () => {
   return (

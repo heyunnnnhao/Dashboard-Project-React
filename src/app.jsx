@@ -1,6 +1,8 @@
 import { BrowserRouter as Router, Link, Routes, Route, useLocation } from 'react-router-dom';
 import './app.scss';
-import { CountDown, Clock, Home, Test } from './pages/index.ts';
+// import { CountDown, Clock, Home, Test } from './pages/index.ts';
+import { CountDown, Clock, Home } from './pages/index.ts';
+
 import ArrowBackIosSharpIcon from '@mui/icons-material/ArrowBackIosSharp';
 import FormatAlignCenterSharpIcon from '@mui/icons-material/FormatAlignCenterSharp';
 
@@ -40,7 +42,7 @@ export default () => {
   return (
     <Router>
       <Header />
-      <Routes>
+      <Switch>
         <Route path='/'>
           <Home />
         </Route>
@@ -50,13 +52,13 @@ export default () => {
         <Route path='/clock'>
           <Clock />
         </Route>
-        <Route path='/test'>
+        {/* <Route path='/test'>
           <Test />
-        </Route>
+        </Route> */}
         <Route path='*'>
           <Whoops />
         </Route>
-      </Routes>
+        </Switch>
       <Footer />
     </Router>
   );

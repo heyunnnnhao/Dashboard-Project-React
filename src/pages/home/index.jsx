@@ -1,12 +1,12 @@
 import { Link } from 'react-router-dom';
 import Particles from 'react-tsparticles';
 import './style.scss';
-import { getCurrentDate } from 'src/utils/common';
+import { getCurrentDate } from '../../utils/common';
 
 const ParticlesEffect = () => {
   return (
     <Particles
-      id="tsparticles"
+      id='tsparticles'
       options={{
         background: {
           color: {
@@ -98,18 +98,18 @@ const Home = () => {
 
   return (
     <>
-      <nav id="navs" className="navs">
-        <Link className="nav_item" to={`/clock`}>
+      <nav id='navs' className='navs'>
+        <Link className='nav_item' to='/clock'>
           Clock
         </Link>
-        <Link className="nav_item" to={`/count_down/${homeDate}`}>
+        <Link className='nav_item' to={`/count_down/${homeDate}`}>
           Count Down
         </Link>
-        <Link className="nav_item" to="/test">
+        {/* <Link className='nav_item' to='/test'>
           Test
-        </Link>
+        </Link> */}
       </nav>
-      <div className="particle">
+      <div className='particle'>
         <ParticlesEffect />
       </div>
     </>

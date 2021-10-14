@@ -71,5 +71,5 @@ module.exports = {
 };
 
 
-
+console.log(__dirname)
 module.exports.moduleFileExtensions = moduleFileExtensions;

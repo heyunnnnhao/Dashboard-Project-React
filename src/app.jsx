@@ -1,6 +1,6 @@
-import { BrowserRouter as Router, Link, Routes, Route, useLocation } from 'react-router-dom';
+import { Link, Routes, Route, useLocation } from 'react-router-dom';
+
 import './app.scss';
-// import { CountDown, Clock, Home, Test } from './pages/index.ts';
 import { CountDown, Clock, Home } from './pages/index.ts';
 
 import ArrowBackIosSharpIcon from '@mui/icons-material/ArrowBackIosSharp';
@@ -40,16 +40,16 @@ const Footer = () => {
 
 export default () => {
   return (
-    <Router>
-      <Header />
-      <Switch>
-        <Route path='/'>
-          <Home />
-        </Route>
+    <>
+      <Header /><Home />
+      <Routes>
+        {/* <Route path='/'> */}
+          
+        {/* </Route> */}
         <Route path='/count_down/:homeDate'>
           <CountDown />
         </Route>
-        <Route path='/clock'>
+        <Route path='/clock/'>
           <Clock />
         </Route>
         {/* <Route path='/test'>
@@ -58,8 +58,8 @@ export default () => {
         <Route path='*'>
           <Whoops />
         </Route>
-        </Switch>
+      </Routes>
       <Footer />
-    </Router>
+    </>
   );
 };

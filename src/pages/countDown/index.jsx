@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { useParams } from 'react-router';
 import './style.scss';
-import icon from 'assets/icon.svg';
-import { getCurrentTime, getTimeDiff, useTime } from 'src/utils/common';
+import icon from '../../assets/icon.svg';
+import { getCurrentTime, getTimeDiff, useTime } from '../../utils/common';
 
 const CountDown = () => {
   let [timeTillOff, setTimeTillOff] = useState(' ');

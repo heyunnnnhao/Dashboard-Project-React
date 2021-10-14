@@ -1,8 +1,7 @@
 import { Link, Routes, Route, useLocation } from 'react-router-dom';
 
 import './app.scss';
-import { CountDown, Clock, Home } from './pages/index.ts';
-
+import { CountDown, Clock, Home, Test } from './pages/index.ts';
 import ArrowBackIosSharpIcon from '@mui/icons-material/ArrowBackIosSharp';
 import FormatAlignCenterSharpIcon from '@mui/icons-material/FormatAlignCenterSharp';
 
@@ -40,21 +39,21 @@ const Footer = () => {
 
 export default () => {
   return (
-    <>
-      <Header /><Home />
+    <Router>
+      <Header />
       <Routes>
-        {/* <Route path='/'> */}
-          
-        {/* </Route> */}
+        <Route path='/'>
+          <Home />
+        </Route>
         <Route path='/count_down/:homeDate'>
           <CountDown />
         </Route>
         <Route path='/clock/'>
           <Clock />
         </Route>
-        {/* <Route path='/test'>
+        <Route path='/test'>
           <Test />
-        </Route> */}
+        </Route>
         <Route path='*'>
           <Whoops />
         </Route>

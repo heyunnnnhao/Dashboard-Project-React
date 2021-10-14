@@ -41,7 +41,7 @@ export const useFetch = (url) => {
   return { data, isPending, error };
 };
 
-export const useTime = () => {
+export const useTime = (updateInterval = 500) => {
   const [hour, setHour] = useState('');
   const [minute, setMinute] = useState('');
   const [second, setSecond] = useState('');
@@ -57,24 +57,20 @@ export const useTime = () => {
     updateTime();
     let tick = setInterval(() => {
       updateTime();
-    }, 500);
+    }, updateInterval);
     return () => clearInterval(tick);
   }, []);
 
   return { hour, minute, second };
 };
 
-export const useTimeDiff = (target)=>{
+export const useTimeDiff = (target) => {};
 
-}
-
-export const useDateDiff = (target)=>{
-
-}
+export const useDateDiff = (target) => {};
 
 // Helpers
 const formatTime = (time) => {
-  return time == null ? '' : time < 10 ? '0' + time : time;
+  return time < 10 ? '0' + time : time;
 };
 
 export const getCurrentDate = function() {

@@ -1,11 +1,14 @@
 import { Link, Routes, Route, Outlet, useLocation } from 'react-router-dom';
 import './app.scss';
-import { CountDown, Clock, Test } from './pages/index.ts';
+import "swiper/swiper.scss";
+import "swiper/swiper-bundle.min.css";
 import Particles from 'react-tsparticles';
-import { getCurrentDate } from '@src/utils/common';
 import ArrowBackIosSharpIcon from '@mui/icons-material/ArrowBackIosSharp';
 import FormatAlignCenterSharpIcon from '@mui/icons-material/FormatAlignCenterSharp';
 import GitHubIcon from '@mui/icons-material/GitHub';
+
+import { getCurrentDate } from '@src/utils/common';
+import { CountDown, Clock, Test } from './pages/index.ts';
 
 const Whoops = () => {
   let location = useLocation();

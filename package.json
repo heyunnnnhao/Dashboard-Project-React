@@ -27,11 +27,13 @@
     "react-scripts": "4.0.3",
     "react-tsparticles": "^1.36.0",
     "redux-thunk": "^2.3.0",
+    "swiper": "^7.0.8",
     "web-vitals": "^1.1.2"
   },
   "scripts": {
-    "start": "craco start",
-    "build": "craco build",
+    "start": "set PORT=5000 && craco start FAST_REFRESH=true",
+    "build": "set GENERATE_SOURCEMAP=false && craco build",
+    "analyzer": "env NODE_ENV=production BUILD_ANALYZER=true yarn start",
     "test": "craco test"
   },
   "eslintConfig": {

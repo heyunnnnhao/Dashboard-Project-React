@@ -3,7 +3,7 @@ import { bindActionCreators } from 'redux';
 import { actionCreators } from '../../redux/index';
 import './style.scss';
 import { getGithubUserURL } from '@api/api';
-import { useFetch } from '@src/utils/common';
+import { useFetch } from '@common/utils';
 import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
 

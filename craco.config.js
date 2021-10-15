@@ -7,10 +7,10 @@ module.exports = {
         source: 'options',
         baseUrl: './',
         aliases: {
-          '@src': './src',
           '@pages': './src/pages',
           '@api': './src/api',
           '@assets': './src/assets',
+          '@common': './src/common',
         },
       },
     },

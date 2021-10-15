@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
 import './style.scss';
 import icon from '@assets/icon.svg';
-import { getCurrentTime, getTimeDiff, useTime } from '@src/utils/common';
+import { getCurrentTime, getTimeDiff, useTime } from'@common/utils';
 
 const CountDown = () => {
   let [timeTillOff, setTimeTillOff] = useState(' ');

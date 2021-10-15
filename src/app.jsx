@@ -1,13 +1,14 @@
 import { Link, Routes, Route, Outlet, useLocation } from 'react-router-dom';
 import './app.scss';
-import "swiper/swiper.scss";
-import "swiper/swiper-bundle.min.css";
+import 'swiper/swiper.scss';
+import 'swiper/swiper-bundle.min.css';
 import Particles from 'react-tsparticles';
 import ArrowBackIosSharpIcon from '@mui/icons-material/ArrowBackIosSharp';
 import FormatAlignCenterSharpIcon from '@mui/icons-material/FormatAlignCenterSharp';
 import GitHubIcon from '@mui/icons-material/GitHub';
+import { ReactComponent as ReactLogo } from './assets/react-logo.svg';
 
-import { getCurrentDate } from '@src/utils/common';
+import { getCurrentDate } from '@common/utils';
 import { CountDown, Clock, Test } from './pages/index.ts';
 
 const Whoops = () => {
@@ -25,9 +26,13 @@ const Header = () => {
   let location = useLocation();
   return (
     <header className='app_header'>
-      <Link className='back' to='/'>
-        {location.pathname === '/' ? <FormatAlignCenterSharpIcon /> : <ArrowBackIosSharpIcon />}
-      </Link>
+      {location.pathname === '/' ? (
+        <ReactLogo className='logo'/>
+      ) : (
+        <Link className='back' to='/'>
+          <ArrowBackIosSharpIcon />
+        </Link>
+      )}
     </header>
   );
 };
@@ -38,7 +43,7 @@ const Footer = () => {
   if (location.pathname === '/') {
     return (
       <footer className='app_footer'>
-        &copy; Copyright 2020-{date.getFullYear()} @Yunhao He &nbsp;
+        <span> &copy; Copyright 2020-{date.getFullYear()} @Yunhao He &nbsp;</span>
         <GitHubIcon fontSize='small' onClick={() => window.open('https://github.com/heyunnnnhao', '_blank').focus()} />
       </footer>
     );

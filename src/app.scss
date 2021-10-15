@@ -61,3 +61,34 @@ body {
   background-color: grey;
   border-radius: 0.5rem;
 }
+
+$nav_item_height: 6rem;
+
+.navs {
+  transition: opacity 0.3s;
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap ;
+  margin: 1rem auto auto auto;
+  .nav_item {
+    height: $nav_item_height;
+    width: 12rem;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    font-size: 1.5rem;
+    line-height: $nav_item_height;
+    margin: 0 1vw 2vw 1vw;
+    background-color: rgba(78, 78, 78, 0.8);
+  }
+}
+
+.particle {
+  width: 100%;
+}
+
+.disappear {
+  opacity: 0;
+}

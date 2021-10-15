@@ -4,7 +4,6 @@ import 'swiper/swiper.scss';
 import 'swiper/swiper-bundle.min.css';
 import Particles from 'react-tsparticles';
 import ArrowBackIosSharpIcon from '@mui/icons-material/ArrowBackIosSharp';
-import FormatAlignCenterSharpIcon from '@mui/icons-material/FormatAlignCenterSharp';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import { ReactComponent as ReactLogo } from './assets/react-logo.svg';
 
@@ -158,7 +157,6 @@ const Home = () => {
           Test
         </Link>
       </nav>
-      <Outlet />
       <div className='particle'>
         <ParticlesEffect />
       </div>

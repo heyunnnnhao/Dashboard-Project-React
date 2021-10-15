@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
 import './style.scss';
 import icon from '@assets/icon.svg';
@@ -32,10 +32,13 @@ const CountDown = () => {
     setTimeTillOff(getTimeDiff(now, end));
   };
 
-  setInterval(() => {
+  useEffect(() => {
     refresher();
-  }, 1000);
-
+    setInterval(() => {
+      refresher();
+    }, 1000);
+  }, []);
+  
   return (
     <div className='count_down'>
       <img src={icon} className='icon' alt='icon' />

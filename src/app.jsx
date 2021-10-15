@@ -5,6 +5,7 @@ import Particles from 'react-tsparticles';
 import { getCurrentDate } from '@src/utils/common';
 import ArrowBackIosSharpIcon from '@mui/icons-material/ArrowBackIosSharp';
 import FormatAlignCenterSharpIcon from '@mui/icons-material/FormatAlignCenterSharp';
+import GitHubIcon from '@mui/icons-material/GitHub';
 
 const Whoops = () => {
   let location = useLocation();
@@ -32,7 +33,12 @@ const Footer = () => {
   let location = useLocation();
   let date = new Date();
   if (location.pathname === '/') {
-    return <footer className='app_footer'>&copy; Copyright 2020-{date.getFullYear()} @Yunhao He &nbsp;</footer>;
+    return (
+      <footer className='app_footer'>
+        &copy; Copyright 2020-{date.getFullYear()} @Yunhao He &nbsp;
+        <GitHubIcon fontSize='small' onClick={() => window.open('https://github.com/heyunnnnhao', '_blank').focus()} />
+      </footer>
+    );
   } else {
     return null;
   }
@@ -157,12 +163,11 @@ export default () => {
     <>
       <Header />
       <Routes>
-        <Route element={<Home />} path='/'>
-          <Route element={<CountDown />} path='/count_down/:homeDate' />
-          <Route element={<Clock />} path='/clock' />
-          <Route element={<Test />} path='/test' />
-          <Route element={<Whoops />} path='*' />
-        </Route>
+        <Route index element={<Home />} path='/' />
+        <Route element={<CountDown />} path='/count_down/:homeDate' />
+        <Route element={<Clock />} path='/clock' />
+        <Route element={<Test />} path='/test' />
+        <Route element={<Whoops />} path='*' />
       </Routes>
       <Footer />
     </>

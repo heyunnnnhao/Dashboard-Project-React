@@ -1,0 +1,13 @@
+.login {
+  width: 40vh;
+  height: 30vh;
+  margin: 25vh auto 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(53, 53, 53, 0.8);
+  .loginItem {
+    margin: 1vh 0;
+  }
+}

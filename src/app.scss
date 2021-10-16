@@ -74,19 +74,21 @@
   flex-wrap: wrap;
   margin: 0 2vh;
   .nav_item {
-    height:  6rem;
+    height: 6rem;
     width: 12rem;
     color: white;
     text-decoration: none;
     text-align: center;
     font-size: 1.5rem;
-    line-height:  6rem;
+    line-height: 6rem;
     margin: 1vw;
     background-color: rgba(78, 78, 78, 0.8);
   }
 }
 
-.particle {
+#tsparticle {
   width: 100%;
+  canvas {
+    background-color: $themeColor;
+  }
 }
-

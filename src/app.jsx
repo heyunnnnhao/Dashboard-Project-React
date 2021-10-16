@@ -56,11 +56,11 @@ const ParticlesEffect = () => {
     <Particles
       id='tsparticles'
       options={{
-        background: {
-          color: {
-            value: '#282c34',
-          },
-        },
+        // background: {
+        //   color: {
+        //     value: '#282c34',
+        //   },
+        // },
         fullScreen: {
           enable: true,
           zIndex: -1,
@@ -157,9 +157,9 @@ const Home = () => {
           Test
         </Link>
       </nav>
-      <div className='particle'>
+      {/* <div className='particle'> */}
         <ParticlesEffect />
-      </div>
+      {/* </div> */}
     </>
   );
 };

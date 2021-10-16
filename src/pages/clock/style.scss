@@ -1,3 +1,5 @@
+@import '@common/style/variable.scss';
+
 .clock {
   min-height: 90vh;
   display: flex;
@@ -12,5 +14,6 @@
   .date {
     font-size: 3vw;
     margin: 1vw auto;
+    color: $error;
   }
 }

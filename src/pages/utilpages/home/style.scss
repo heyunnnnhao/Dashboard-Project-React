@@ -1,0 +1,28 @@
+@import '@common/style/variable.scss';
+
+.navs {
+  transition: opacity 0.3s;
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 0 2vh;
+  .nav_item {
+    width: 20vw;
+    text-decoration: none;
+    text-align: center;
+    font-size: 1.5rem;
+    line-height: 6rem;
+    margin: 1vw;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.548);
+  }
+}
+
+.tsparticle {
+  width: 100%;
+  canvas {
+    background-color: $themeColor;
+  }
+}

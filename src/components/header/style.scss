@@ -1,0 +1,19 @@
+.app_header {
+  background: transparent;
+  width: 100%;
+  height: 8vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  .logo {
+    height: 4vh;
+    margin: 0 2vh;
+  }
+  .back {
+    height: 2vh;
+    color: grey;
+    text-decoration: none;
+    margin: 0 2vw;
+  }
+}

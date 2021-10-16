@@ -1,8 +1,8 @@
-import { Link, Routes, Route, useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import Particles from 'react-tsparticles';
 import Button from '@mui/material/Button';
-import './style.scss'
-
+import GitHubIcon from '@mui/icons-material/GitHub';
+import './style.scss';
 import { getCurrentDate } from '@common/utils';
 
 const ParticlesEffect = () => {
@@ -69,7 +69,7 @@ const ParticlesEffect = () => {
           number: {
             density: {
               enable: true,
-              value_area: 1000,
+              value_area: 1800,
             },
             value: 80,
           },
@@ -80,13 +80,23 @@ const ParticlesEffect = () => {
             type: 'circle',
           },
           size: {
-            // random: true,
+            random: true,
             value: 2,
           },
         },
         detectRetina: true,
       }}
     />
+  );
+};
+
+const Footer = () => {
+  let date = new Date();
+  return (
+    <footer className='app_footer'>
+      <span> &copy; Copyright 2020-{date.getFullYear()} @Yunhao He &nbsp;</span>
+      <GitHubIcon fontSize='small' onClick={() => window.open('https://github.com/heyunnnnhao', '_blank').focus()} />
+    </footer>
   );
 };
 
@@ -104,11 +114,12 @@ export default () => {
   return (
     <>
       <nav id='navs' className='navs'>
-        <HomeCard className='nav_item' to='/clock' text='Clock' />
-        <HomeCard className='nav_item' to='/test' text='Test' />
-        <HomeCard className='nav_item' to={`/count_down/${homeDate}`} text='Count Down' />
+        <HomeCard to='/clock' text='Clock' />
+        <HomeCard to={`/count_down/${homeDate}`} text='Count Down' />
+        <HomeCard to='/test' text='Test' />
       </nav>
       <ParticlesEffect className='tsparticle' />
+      <Footer />
     </>
   );
 };

@@ -33,7 +33,6 @@
   "scripts": {
     "start": "set PORT=3000 && craco start FAST_REFRESH=true",
     "build": "set GENERATE_SOURCEMAP=false && craco build",
-    "analyzer": "env NODE_ENV=production BUILD_ANALYZER=true yarn start",
     "test": "craco test"
   },
   "eslintConfig": {

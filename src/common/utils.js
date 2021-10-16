@@ -73,7 +73,7 @@ const formatTime = (time) => {
   return time < 10 ? '0' + time : time;
 };
 
-export const getCurrentDate = function() {
+export const getCurrentDate = function () {
   let args = Object.values(arguments);
   let date = new Date();
   let weeks = { 1: 'Mon.', 2: 'Tue.', 3: 'Wed.', 4: 'Thu.', 5: 'Fri.', 6: 'Sat.', 7: 'Sun.' };

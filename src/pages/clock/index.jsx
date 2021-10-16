@@ -3,7 +3,7 @@ import './style.scss';
 import { useTime, getCurrentDate } from '@common/utils';
 
 const Clock = () => {
-  const { hour, minute, second } = useTime();
+  let { hour, minute, second } = useTime();
   const homeDate = getCurrentDate('year', 'month', 'day');
   return (
     <div className='clock'>

@@ -15,5 +15,11 @@ module.exports = {
         },
       },
     },
+    {
+      plugin: require('craco-sass-resources-loader'),
+      options: {
+        resources: './src/common/style/variable.scss',
+      },
+    },
   ],
 };

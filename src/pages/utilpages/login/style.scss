@@ -11,6 +11,10 @@
   .loginItem {
     margin: 1vh 0;
   }
+  .loginItem > * {
+    color: #fafafa;
+    border: white;
+  }
 }
 
 .app_footer {

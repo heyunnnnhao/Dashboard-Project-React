@@ -7,9 +7,12 @@ import './index.scss';
 import 'swiper/swiper.scss';
 import 'swiper/swiper-bundle.min.css';
 import { AuthProvider, RequireAuth } from './common/auth/auth';
+import { ThemeProvider } from '@mui/material/styles';
+import { theme } from './common/style/theme';
 
 import { Header } from './components/index';
 import { Home, NotFound, Login, CountDown, Clock, Test } from './pages/index';
+
 
 const App = () => {
   return (
@@ -57,11 +60,13 @@ const App = () => {
 
 ReactDOM.render(
   <StrictMode>
-    <Provider store={store}>
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
-    </Provider>
+    <ThemeProvider theme={theme}>
+      <Provider store={store}>
+        <BrowserRouter>
+          <App />
+        </BrowserRouter>
+      </Provider>
+    </ThemeProvider>
   </StrictMode>,
   document.getElementById('root')
 );

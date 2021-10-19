@@ -128,10 +128,10 @@ export default () => {
   return (
     <>
       <form onSubmit={handleSubmit} className='login'>
-        <FormControl className='loginItem' sx={{ m: 1, width: '25ch' }} variant='outlined'>
+        <FormControl className='loginItem' sx={{ m: 1, width: '25ch' }} variant='outlined' color='info'>
           <InputLabel htmlFor='outlined-adornment-password'>Username</InputLabel>
           <OutlinedInput
-            id='outlined-adornment-password'
+            id='outlined-adornment-username'
             type='text'
             value={username}
             onChange={(e) => {
@@ -142,7 +142,7 @@ export default () => {
           />
         </FormControl>
 
-        <FormControl className='loginItem' sx={{ m: 1, width: '25ch' }} variant='outlined'>
+        <FormControl className='loginItem' sx={{ m: 1, width: '25ch' }} variant='outlined' color='info'>
           <InputLabel htmlFor='outlined-adornment-password'>Password</InputLabel>
           <OutlinedInput
             id='outlined-adornment-password'

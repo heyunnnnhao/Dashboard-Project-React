@@ -3,6 +3,7 @@ import { useNavigate, useLocation, Navigate } from 'react-router-dom';
 import Particles from 'react-tsparticles';
 import './style.scss';
 import { useAuth } from '../../../common/auth/auth';
+import GitHubIcon from '@mui/icons-material/GitHub';
 import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 import OutlinedInput from '@mui/material/OutlinedInput';
@@ -97,6 +98,16 @@ const ParticlesEffect = () => {
   );
 };
 
+const Footer = () => {
+  let date = new Date();
+  return (
+    <footer className='app_footer'>
+      <span> &copy; Copyright 2020-{date.getFullYear()} @Yunhao He &nbsp;</span>
+      <GitHubIcon fontSize='small' onClick={() => window.open('https://github.com/heyunnnnhao', '_blank').focus()} />
+    </footer>
+  );
+};
+
 export default () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
@@ -155,6 +166,7 @@ export default () => {
           Submit
         </Button>
       </form>
+      <Footer />
       <ParticlesEffect className='tsparticle' />
     </>
   );

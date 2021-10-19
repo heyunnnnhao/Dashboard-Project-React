@@ -1,19 +1,22 @@
 .navs {
   transition: opacity 0.3s;
+  width: 90vw;
   list-style-type: none;
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: space-between;
   flex-wrap: wrap;
-  margin: 0 2vh;
+  margin: 0 auto;
   .nav_item {
-    width: 20vw;
+    width: 15rem;
+    height: 10rem;
     text-decoration: none;
     text-align: center;
     font-size: 1.5rem;
     line-height: 6rem;
-    margin: 1vw;
     border-radius: 8px;
+    margin: 1vw;
     background-color: rgba(255, 255, 255, 0.548);
     color: black;
   }

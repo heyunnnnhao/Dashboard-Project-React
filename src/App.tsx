@@ -13,7 +13,18 @@ import ListItemText from '@mui/material/ListItemText';
 import DialogTitle from '@mui/material/DialogTitle';
 import Dialog from '@mui/material/Dialog';
 
-import { Home, NotFound, Login, CountDown, Clock, Test } from './pages/index';
+import { Home, Login, CountDown, Clock, Test } from './pages/index';
+
+const NotFound = () => {
+  let location = useLocation();
+  return (
+    <div>
+      <span className='not_found'>
+        Location <span>{location.pathname}</span> does not exist!
+      </span>
+    </div>
+  );
+};
 
 const Header = () => {
   const [open, setOpen] = useState(false);

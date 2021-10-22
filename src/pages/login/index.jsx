@@ -2,7 +2,7 @@ import { FormEvent, Fragment, StrictMode, useState } from 'react';
 import { useNavigate, useLocation, Navigate } from 'react-router-dom';
 import Particles from 'react-tsparticles';
 import './style.scss';
-import { useAuth } from '../../../common/auth/auth';
+import { useAuth } from '../../common/auth/auth';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';

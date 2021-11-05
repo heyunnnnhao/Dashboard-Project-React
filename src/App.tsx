@@ -12,6 +12,7 @@ import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
 import DialogTitle from '@mui/material/DialogTitle';
 import Dialog from '@mui/material/Dialog';
+import { getCookie } from './common';
 
 import { Home, Login, CountDown, Clock, Test } from './pages/index';
 
@@ -53,9 +54,9 @@ const Header = () => {
         <ReactLogo className='logo' />
       )}
 
-      {auth.user && locale == 'home' ? (
+      {locale == 'home' ? (
         <Button className='status' variant='outlined' onClick={() => setOpen(true)}>
-          {auth.user}
+          {getCookie('logIn')}
         </Button>
       ) : null}
 

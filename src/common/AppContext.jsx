@@ -2,8 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 export const AppContext = React.createContext(null);
 
-export const AppProvider = (props) => {
-  const { children } = props;
+export const AppProvider = ({ children }) => {
   const [amount, setAmount] = useState(1);
 
   const withdrawMoney = () => {

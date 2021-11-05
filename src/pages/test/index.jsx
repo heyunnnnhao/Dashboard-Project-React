@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 import './style.scss';
 import { getGithubUserURL } from '@api/api';
-import { useFetch } from '@common/utils';
+import { useFetch } from '@common';
 import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
 import { AppContext } from '@common/AppContext';

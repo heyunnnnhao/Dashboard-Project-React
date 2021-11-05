@@ -2,7 +2,7 @@ import { Link, useLocation } from 'react-router-dom';
 import Button from '@mui/material/Button';
 
 import './style.scss';
-import { getCurrentDate } from '@common/utils';
+import { getCurrentDate } from '@common';
 
 const HomeCard = ({ to, text }) => {
   return (

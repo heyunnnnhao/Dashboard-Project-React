@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import './style.scss';
-import { useTime, getCurrentDate } from '@common/utils';
+import { useTime, getCurrentDate, setCookie } from '@common';
 
 const Clock = () => {
   let { hour, minute, second } = useTime();

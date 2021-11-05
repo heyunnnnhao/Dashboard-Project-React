@@ -5,12 +5,12 @@ export const AppContext = React.createContext(null);
 export const AppProvider = ({ children }) => {
   const [amount, setAmount] = useState(1);
 
-  const withdrawMoney = () => {
-    setAmount(amount - 1);
+  const withdrawMoney = (value) => {
+    setAmount(amount - value);
   };
 
-  const depositMoney = () => {
-    setAmount(amount + 1);
+  const depositMoney = (value) => {
+    setAmount(amount + value);
   };
 
   return <AppContext.Provider value={{ amount, depositMoney, withdrawMoney }}>{children}</AppContext.Provider>;

@@ -42,14 +42,14 @@ export const useFetch = (url) => {
   return { data, isPending, error };
 };
 
-export const useTime = (updateInterval = 500) => {
+export const useTime = (isUTC = false, updateInterval = 500) => {
   const [hour, setHour] = useState('');
   const [minute, setMinute] = useState('');
   const [second, setSecond] = useState('');
 
   const updateTime = () => {
     let date = new Date();
-    setHour(formatTime(date.getHours()));
+    setHour(formatTime(isUTC ? date.getUTCHours() : date.getHours()));
     setMinute(formatTime(date.getMinutes()));
     setSecond(formatTime(date.getSeconds()));
   };

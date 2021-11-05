@@ -14,7 +14,7 @@ import DialogTitle from '@mui/material/DialogTitle';
 import Dialog from '@mui/material/Dialog';
 import { getCookie } from './common';
 
-import { Home, Login, CountDown, Clock, Test } from './pages/index';
+import { Home, Login, WorldClock, Clock, Test } from './pages/index';
 
 const NotFound = () => {
   let location = useLocation();
@@ -96,10 +96,10 @@ export default () => {
         <Route
           element={
             <RequireAuth>
-              <CountDown />
+              <WorldClock />
             </RequireAuth>
           }
-          path='/count_down/:homeDate'
+          path='/world_clock/:homeDate'
         />
         <Route
           element={

@@ -18,7 +18,7 @@ export default () => {
     <>
       <nav id='navs' className='navs'>
         <HomeCard to='/clock' text='Clock' />
-        <HomeCard to={`/count_down/${homeDate}`} text='Count Down' />
+        <HomeCard to={`/world_clock/${homeDate}`} text='World Clock' />
         <HomeCard to='/test' text='Test' />
       </nav>
     </>

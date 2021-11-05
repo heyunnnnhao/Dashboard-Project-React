@@ -1,8 +1,8 @@
 import Home from './home';
 import Login from './login';
 
-import CountDown from './count-down/index.jsx';
-import Clock from './clock/index.jsx';
-import Test from './test/index.jsx';
+import WorldClock from './world-clock';
+import Clock from './clock';
+import Test from './test';
 
-export { Home, Login, CountDown, Clock, Test };
+export { Home, Login, WorldClock, Clock, Test };

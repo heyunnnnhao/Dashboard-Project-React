@@ -1,10 +1,18 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 export const AppContext = React.createContext(null);
 
 export const AppProvider = (props) => {
   const { children } = props;
-  const amount = 1;
+  const [amount, setAmount] = useState(1);
 
-  return <AppContext.Provider value={{ amount }}>{children}</AppContext.Provider>;
+  const withdrawMoney = () => {
+    setAmount(amount - 1);
+  };
+
+  const depositMoney = () => {
+    setAmount(amount + 1);
+  };
+
+  return <AppContext.Provider value={{ amount, depositMoney, withdrawMoney }}>{children}</AppContext.Provider>;
 };

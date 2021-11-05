@@ -109,3 +109,12 @@ export const getTimeDiff = (start, end) => {
 export const imgOnError = (e) => {
   console.log(e);
 };
+
+export const getCookie = (key) => {
+  const rule = new RegExp(`(?:(?:^|.*;)\\s*${encodeURIComponent(key).replace(/[-.+*]/g, '\\$&')}\\s*\\=\\s*([^;]*).*$)|^.*$`);
+  return document.cookie.replace(rule, '$1') || null;
+};
+
+export const setCookie = (key, val, opts) => {
+  
+};

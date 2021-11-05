@@ -9,8 +9,10 @@ import { AppContext } from '@common/AppContext';
 const Test = () => {
   const { data: users, isPending, error } = useFetch(getGithubUserURL);
   let context = useContext(AppContext);
-  let { amount } = context;
+  let { amount, depositMoney, withdrawMoney } = context;
   let list = '';
+
+  
   if (isPending) list = <div>Loading</div>;
   if (error) list = <div>{error}</div>;
   if (users) {
@@ -26,19 +28,19 @@ const Test = () => {
       );
     });
   }
-  console.log(context);
+
   return (
     <>
       <div className='control'>
         <h1>{amount}</h1>
-        {/* <Stack spacing={2} direction='row'>
+        <Stack spacing={2} direction='row'>
           <Button variant='outlined' size='large' onClick={() => context.depositMoney(1)}>
             Deposit
           </Button>
           <Button variant='outlined' size='large' onClick={() => context.withdrawMoney(1)}>
             Withdraw
           </Button>
-        </Stack> */}
+        </Stack>
       </div>
       <div className='container'>{list}</div>
     </>

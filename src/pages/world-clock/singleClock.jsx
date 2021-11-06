@@ -9,7 +9,7 @@ export default ({ city, diff }) => {
 
   return (
     <div className='clock'>
-      <ClockFace />
+      <ClockFace hr={+hour + diff} min={minute} sec={second} uid={city} />
       {`${city} - ${+hour + diff}:${minute}:${second}`}
     </div>
   );

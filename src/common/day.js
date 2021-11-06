@@ -38,18 +38,15 @@ export const getTimeDiff = (start, end) => {
   return formatTime(hours) + ':' + formatTime(minutes) + ':' + formatTime(seconds);
 };
 
-export const ClockFace = () => {
-  const { hour:hr, minute:min, second:sec } = useTime();
-
+export const ClockFace = ({ hr, min, sec, uid }) => {
   const move = () => {
-    let HOURHAND = document.querySelector('#hour');
-    let MINUTEHAND = document.querySelector('#minute');
-    let SECONDHAND = document.querySelector('#second');
+    let HOURHAND = document.getElementById(`hour${uid}`);
+    let MINUTEHAND = document.getElementById(`minute${uid}`);
+    let SECONDHAND = document.getElementById(`second${uid}`);
 
     let hrPosition = (hr * 360) / 12 + (min * 6) / 12 + 6;
     let minPosition = (min * 360) / 60 + (sec * 6) / 60 + 0.1;
     let secPosition = (sec * 360) / 60 + 30 / 3600;
-
     //rotate
     HOURHAND.style.transform = 'rotate(' + hrPosition + 'deg)';
     MINUTEHAND.style.transform = 'rotate(' + minPosition + 'deg)';
@@ -71,15 +68,15 @@ export const ClockFace = () => {
           />
           <circle className='mid-circle' cx='300' cy='300' r='16.2' />
         </g>
-        <g id='hour'>
+        <g id={`hour${uid}`} className='hour'>
           <path className='hour-arm' d='M300.5 298V142' />
           <circle className='sizing-box' cx='300' cy='300' r='253.9' />
         </g>
-        <g id='minute'>
+        <g id={`minute${uid}`} className='minute'>
           <path className='minute-arm' d='M300.5 298V67' />
           <circle className='sizing-box' cx='300' cy='300' r='253.9' />
         </g>
-        <g id='second'>
+        <g id={`second${uid}`} className='second'>
           <path className='second-arm' d='M300.5 350V55' />
           <circle className='sizing-box' cx='300' cy='300' r='253.9' />
         </g>

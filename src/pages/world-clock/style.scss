@@ -3,19 +3,20 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   color: white;
-  .icon {
-    height: 30vw;
-    pointer-events: none;
+  .city-selector {
+    width: 90vw;
   }
-  .time {
-    font-size: 6vw;
-    margin: 1vw auto;
-  }
-  .date {
-    font-size: 2vw;
-    margin: 1vw auto;
+  .clocks {
+    height: 60vw;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    .clock {
+      width: 20vw;
+      height: 20vw;
+    }
   }
 }
 
@@ -32,4 +33,82 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.clockbox,
+#clock {
+  width: 100%;
+  height: 100%;
+}
+
+/* Clock styles */
+.circle {
+  fill: none;
+  stroke: #000;
+  stroke-width: 6;
+  stroke-miterlimit: 10;
+}
+
+.mid-circle {
+  fill: #000;
+}
+.hour-marks {
+  fill: none;
+  stroke: #000;
+  stroke-width: 4;
+  stroke-miterlimit: 10;
+}
+
+.hour-arm {
+  fill: none;
+  stroke: #000;
+  stroke-width: 15;
+  stroke-miterlimit: 10;
+}
+
+.minute-arm {
+  fill: none;
+  stroke: #000;
+  stroke-width: 8;
+  stroke-miterlimit: 10;
+}
+
+.second-arm {
+  fill: none;
+  stroke: #000;
+  stroke-width: 3;
+  stroke-miterlimit: 10;
+}
+
+/* Transparent box ensuring arms center properly. */
+.sizing-box {
+  fill: none;
+}
+
+/* Make all arms rotate around the same center point. */
+/* Optional: Use transition for animation. */
+#hour,
+#minute,
+#second {
+  transform-origin: 300px 300px;
+  transition: transform 0.3s ease-in-out;
+}
+#time {
+  font-size: 60px;
+  text-align: center;
+  color: black;
+}
+
+#but {
+  display: block;
+  max-width: 300px;
+  margin: auto;
+  margin-top: 20px;
+}
+
+img {
+  max-width: 700px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }

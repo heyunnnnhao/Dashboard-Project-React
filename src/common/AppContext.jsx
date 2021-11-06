@@ -4,14 +4,7 @@ export const AppContext = React.createContext(null);
 
 export const AppProvider = ({ children }) => {
   const [amount, setAmount] = useState(1);
+  const [cityList, setCityList] = useState([]);
 
-  const withdrawMoney = (value) => {
-    setAmount(amount - value);
-  };
-
-  const depositMoney = (value) => {
-    setAmount(amount + value);
-  };
-
-  return <AppContext.Provider value={{ amount, depositMoney, withdrawMoney }}>{children}</AppContext.Provider>;
+  return <AppContext.Provider value={{ amount, setAmount, cityList, setCityList }}>{children}</AppContext.Provider>;
 };

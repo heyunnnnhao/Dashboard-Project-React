@@ -8,8 +8,7 @@ import { AppContext } from '@common/AppContext';
 
 export default () => {
   const { data: users, isPending, error } = useFetch(getGithubUserURL);
-  let context = useContext(AppContext);
-  let { amount, depositMoney, withdrawMoney } = context;
+  let { amount, setAmount } = useContext(AppContext);
   let list = '';
 
   if (isPending) list = <div>Loading</div>;
@@ -33,10 +32,10 @@ export default () => {
       <div className='control'>
         <h1>{amount}</h1>
         <Stack spacing={2} direction='row'>
-          <Button variant='outlined' size='large' onClick={() => depositMoney(1)}>
+          <Button variant='outlined' size='large' onClick={() => setAmount(amount + 1)}>
             Deposit
           </Button>
-          <Button variant='outlined' size='large' onClick={() => withdrawMoney(1)}>
+          <Button variant='outlined' size='large' onClick={() => setAmount(amount - 1)}>
             Withdraw
           </Button>
         </Stack>

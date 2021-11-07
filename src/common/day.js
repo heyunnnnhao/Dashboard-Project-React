@@ -39,7 +39,8 @@ export const getTimeDiff = (start, end) => {
 };
 
 export const ClockFace = ({ hr, min, sec, uid }) => {
-  const move = () => {
+  
+  useEffect(() => {
     let HOURHAND = document.getElementById(`hour${uid}`);
     let MINUTEHAND = document.getElementById(`minute${uid}`);
     let SECONDHAND = document.getElementById(`second${uid}`);
@@ -51,10 +52,6 @@ export const ClockFace = ({ hr, min, sec, uid }) => {
     HOURHAND.style.transform = 'rotate(' + hrPosition + 'deg)';
     MINUTEHAND.style.transform = 'rotate(' + minPosition + 'deg)';
     SECONDHAND.style.transform = 'rotate(' + secPosition + 'deg)';
-  };
-
-  useEffect(() => {
-    move();
   }, [sec]);
 
   return (

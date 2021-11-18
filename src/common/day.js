@@ -5,8 +5,8 @@ export const formatTime = (time) => {
   return time < 10 ? '0' + time : time;
 };
 
-export const getCurrentDate = function () {
-  let args = Object.values(arguments);
+export const getCurrentDate = (args) => {
+  let args = Object.values(args);
   let date = new Date();
   let weeks = { 1: 'Mon.', 2: 'Tue.', 3: 'Wed.', 4: 'Thu.', 5: 'Fri.', 6: 'Sat.', 7: 'Sun.' };
   let day = {
@@ -39,7 +39,6 @@ export const getTimeDiff = (start, end) => {
 };
 
 export const ClockFace = ({ hr, min, sec, uid }) => {
-  
   useEffect(() => {
     let HOURHAND = document.getElementById(`hour${uid}`);
     let MINUTEHAND = document.getElementById(`minute${uid}`);

@@ -1,6 +1,17 @@
+.header{
+  min-height: 8vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  div{
+    height: 8vh;
+    line-height: 8vh;
+  }
+}
+
 .main {
   background-color: white;
-  min-height: 100vh;
+  min-height: 90vh;
   width: 85vw;
   margin: 0 auto;
   section {
@@ -15,14 +26,9 @@
   border-top: 1px solid #eaeaea;
   justify-content: center;
   align-items: center;
-  a {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-grow: 1;
-    .logo {
-      height: 1em;
-      margin-left: 0.5rem;
-    }
+  .logo {
+    position: relative;
+    top: 0.1em;
+    height: 1em;
   }
 }

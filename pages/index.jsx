@@ -1,5 +1,8 @@
-import styles from 'styles/Home.module.scss';
+import Image from 'next/image';
+import Link from 'next/link';
+
 import Layout from 'components/layout';
+import styles from 'styles/Home.module.scss';
 
 const Home = () => {
   return (
@@ -13,25 +16,47 @@ const Home = () => {
       </p>
 
       <div className={styles.grid}>
-        <a href='https://nextjs.org/docs' className={styles.card}>
-          <h2>Documentation &rarr;</h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
+        <div className={styles.card}>
+          <Link href='/about'>
+            <a>
+              <h2>About &rarr;</h2>
+              <p>Find in-depth information about Next.js features and API.</p>
+            </a>
+          </Link>
+        </div>
 
-        <a href='https://nextjs.org/learn' className={styles.card}>
+        <div className={styles.card}>
+          <Link href='/about'>
+            <a>
+              <h2>Test &rarr;</h2>
+              <p>Find in-depth information about Next.js features and API.</p>
+            </a>
+          </Link>
+        </div>
+
+        <div className={styles.card}>
+          <Link href='/about'>
+            <a>
+              <h2>Documentation &rarr;</h2>
+              <p>Find in-depth information about Next.js features and API.</p>
+            </a>
+          </Link>
+        </div>
+
+        <div className={styles.card}>
           <h2>Learn &rarr;</h2>
           <p>Learn about Next.js in an interactive course with quizzes!</p>
-        </a>
+        </div>
 
-        <a href='https://github.com/vercel/next.js/tree/master/examples' className={styles.card}>
+        <div className={styles.card}>
           <h2>Examples &rarr;</h2>
           <p>Discover and deploy boilerplate example Next.js projects.</p>
-        </a>
+        </div>
 
-        <a href='https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app' className={styles.card}>
+        <div className={styles.card}>
           <h2>Deploy &rarr;</h2>
           <p>Instantly deploy your Next.js site to a public URL with Vercel.</p>
-        </a>
+        </div>
       </div>
     </div>
   );

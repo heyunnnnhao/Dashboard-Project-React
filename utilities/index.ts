@@ -1,1 +1,0 @@
-export { appendHeader } from './responseHandler';

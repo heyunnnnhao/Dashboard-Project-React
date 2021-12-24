@@ -1,5 +1,8 @@
+import { useState, useEffect } from 'react';
+
 import Head from 'next/head';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 import Avatar from '@mui/material/Avatar';
 import GitHubIcon from '@mui/icons-material/GitHub';
@@ -7,6 +10,8 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 import styles from './layout.module.scss';
 
 export default function Layout({ children }) {
+  const router = useRouter();
+  const location = router.pathname === '/' ? 'home' : '';
   return (
     <>
       <Head>
@@ -15,23 +20,24 @@ export default function Layout({ children }) {
         <title>Dash</title>
       </Head>
 
-      <header className={styles.header}>
-        <Link href='/'>
-          <div> </div>
-        </Link>
-        <Link href='/'>
-          <div> </div>
-        </Link>
-      </header>
+      {location !== 'home' && (
+        <header className={styles.header}>
+          <Link href='/'>
+            <div> back to home</div>
+          </Link>
+        </header>
+      )}
 
       <main className={styles.main}>{children}</main>
 
-      <footer className={styles.footer}>
-        <span> Created by Yunhao&nbsp;</span>
-        <a href='https://github.com/heyunnnnhao' target='_blank' rel='noopener noreferrer'>
-          <GitHubIcon fontSize='small' className={styles.logo} />
-        </a>
-      </footer>
+      {location === 'home' && (
+        <footer className={styles.footer}>
+          <span> Created by Yunhao&nbsp;</span>
+          <a href='https://github.com/heyunnnnhao' target='_blank' rel='noopener noreferrer'>
+            <GitHubIcon fontSize='small' className={styles.logo} />
+          </a>
+        </footer>
+      )}
     </>
   );
 }

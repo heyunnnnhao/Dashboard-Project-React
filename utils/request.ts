@@ -1,4 +1,5 @@
 import useSWR from 'swr';
+import axios from 'axios';
 
 type useFetchOptions = {
   latency?: number;
@@ -33,3 +34,8 @@ export function useFetch(requestURL: string, options: useFetchOptions): useFetch
 
   return { data, error, loading };
 }
+
+export const AxiosRequestInstance = axios.create({
+  baseURL: '',
+  timeout: 1000,
+});

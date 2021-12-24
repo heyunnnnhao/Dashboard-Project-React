@@ -1,9 +1,14 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from 'next';
 import isEmpty from 'lodash.isempty';
+import axios from 'axios';
 
-export default function handler(req: NextApiRequest, res: NextApiResponse<any>) {
+import { AxiosRequestInstance } from 'utils';
+
+export default async function handler(req: NextApiRequest, res: NextApiResponse<any>) {
+  // const raw = axios.get('/data/data.json');
   const raw = require('../../public/data/data.json');
+
   if (isEmpty(raw)) res.status(404).json(raw);
   res.status(200).json(raw);
 }

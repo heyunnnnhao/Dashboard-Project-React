@@ -1,1 +1,1 @@
-export { useFetch } from './request';
+export { useFetch, AxiosRequestInstance } from './request';

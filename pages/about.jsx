@@ -6,7 +6,8 @@ const About = () => {
   const { data, error, loading } = useFetch('/api/hello', { latency: 1000, name: 'about' });
 
   console.log(data, error, loading);
-
+  console.log(process.env.customKey);
+  
   if (loading) return <div>loading</div>;
   if (error) return <div>error</div>;
   return (

@@ -1,4 +1,12 @@
-{
-  "name": "yunhao",
-  "sex": "male"
-}
+[
+  {
+    "id": 1,
+    "name": "yunhao",
+    "sex": "male"
+  },
+  {
+    "id": 2,
+    "name": "noidea",
+    "sex": "female"
+  }
+]

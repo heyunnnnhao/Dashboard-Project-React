@@ -1,1 +1,1 @@
-export { appendResponseHeader, useFetch } from './request';
+export { useFetch } from './request';

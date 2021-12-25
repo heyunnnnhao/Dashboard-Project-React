@@ -3,19 +3,19 @@
 const { PHASE_DEVELOPMENT_SERVER } = require('next/constants');
 
 module.exports = (phase, { defaultConfig }) => {
-  if (phase === PHASE_DEVELOPMENT_SERVER) {
-    return {
-      reactStrictMode: true,
-      env: {
-        customKey: 'my-value',
-      },
-    };
-  }
-
-  return {
+  let NextConfig = {
     reactStrictMode: true,
     env: {
-      customKey: 'my-value',
+      baseURL: '',
+      phase: phase,
     },
   };
+  if (phase === PHASE_DEVELOPMENT_SERVER) {
+  }
+  if (phase === PHASE_PRODUCTION_SERVER) {
+  }
+  if (phase === PHASE_PRODUCTION_BUILD) {
+  }
+
+  return NextConfig;
 };

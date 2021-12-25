@@ -5,6 +5,7 @@ import { useFetch } from 'utils';
 const About = () => {
   const { data, error, loading } = useFetch('/api/hello', { latency: 1000, name: 'about' });
 
+  console.log(process.env.NODE_ENV);
   console.log(data, error, loading);
 
   if (loading) return <Loading />;

@@ -1,4 +1,4 @@
-import { Layout, Wrapper } from 'components';
+import { Layout, Loading, Error } from 'components';
 import styles from 'styles/About.module.scss';
 import { useFetch } from 'utils';
 
@@ -6,13 +6,12 @@ const About = () => {
   const { data, error, loading } = useFetch('/api/hello', { latency: 1000, name: 'about' });
 
   console.log(data, error, loading);
-  console.log(process.env.customKey);
-  
-  if (loading) return <div>loading</div>;
-  if (error) return <div>error</div>;
+
+  if (loading) return <Loading />;
+  if (error) return <Error />;
   return (
     <div className={styles.container}>
-      {data.map((item, index) => {
+      {data?.map((item, index) => {
         return (
           <div key={item.id} className={styles.content}>
             {item.name}

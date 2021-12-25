@@ -6,7 +6,7 @@ import { useRouter } from 'next/router';
 
 import GitHubIcon from '@mui/icons-material/GitHub';
 
-import styles from './layout.module.scss';
+import styles from './index.module.scss';
 
 export default function Layout({ children }) {
   const router = useRouter();

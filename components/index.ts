@@ -1,3 +1,5 @@
 import Layout from './layout';
+import Loading from './loading';
+import Error from './error';
 
-export { Layout };
+export { Layout, Loading, Error };

@@ -6,11 +6,11 @@ module.exports = (phase, { defaultConfig }) => {
   let NextConfig = {
     reactStrictMode: true,
     env: {
-      baseURL: '',
       phase: phase,
     },
   };
   if (phase === PHASE_DEVELOPMENT_SERVER) {
+    NextConfig.env.baseURL = 'api';
   }
   if (phase === PHASE_PRODUCTION_SERVER) {
   }

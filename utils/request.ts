@@ -1,5 +1,6 @@
 import useSWR from 'swr';
 import axios from 'axios';
+import { env, baseURL } from './constants';
 
 type useFetchOptions = {
   latency?: number;
@@ -36,6 +37,6 @@ export function useFetch(requestURL: string, options: useFetchOptions): useFetch
 }
 
 export const AxiosRequestInstance = axios.create({
-  baseURL: process.env.baseURL,
+  baseURL,
   timeout: 1000,
 });

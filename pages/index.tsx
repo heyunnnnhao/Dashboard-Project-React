@@ -62,7 +62,7 @@ const Home = () => {
   );
 };
 
-Home.getLayout = function getLayout(page) {
+Home.getLayout = function getLayout(page: any) {
   return <Layout>{page}</Layout>;
 };
 

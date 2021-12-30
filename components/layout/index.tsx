@@ -8,7 +8,7 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 
 import styles from './index.module.scss';
 
-export default function Layout({ children }) {
+export default function Layout({ children }: any) {
   const router = useRouter();
   const location = router.pathname === '/' ? 'home' : '';
   return (

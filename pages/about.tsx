@@ -19,7 +19,7 @@ const About = () => {
   if (error) return <Error />;
   return (
     <div className={styles.container}>
-      {data.map((item, index) => {
+      {data?.map((item, index) => {
         return (
           <div key={item.id} className={styles.content}>
             {item.name}

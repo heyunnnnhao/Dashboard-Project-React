@@ -38,5 +38,5 @@ export function useFetch(requestURL: string, options: useFetchOptions): useFetch
 
 export const AxiosRequestInstance = axios.create({
   baseURL,
-  timeout: 1000,
+  timeout: 1000, 
 });

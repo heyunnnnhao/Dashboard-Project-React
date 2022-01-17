@@ -10,7 +10,6 @@ module.exports = (phase, { defaultConfig }) => {
     },
   };
   if (phase === PHASE_DEVELOPMENT_SERVER) {
-    NextConfig.env.baseURL = 'http://localhost:3000/api';
   }
   if (phase === PHASE_PRODUCTION_SERVER) {
   }

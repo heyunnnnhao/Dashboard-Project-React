@@ -17,17 +17,14 @@
     "incremental": true,
     "baseUrl": ".",
     "paths": {
-      "components/*": ["components/*"],
-      "utils/*": ["utils/*"],
-      "pages/*": ["pages/*"],
-      "styles/*": ["styles/*"],
-      "@/components/*": ["components/*"],
-      "@/page-components/*": ["page-components/*"],
-      "@/lib/*": ["lib/*"],
-      "@/api-lib/*": ["api-lib/*"],
-      "@/assets/*": ["assets/*"]
+      "components/*": ["/src/components/"],
+      "utils/*": ["/src/utils/*"],
+      "pages/*": ["/src/pages/*"],
+      "styles/*": ["/src/styles/*"],
+      "api-lib/*": ["/src/api-lib/*"],
+      "assets/*": ["/assets/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "**/*.js", "**/*.jsx"],
-  "exclude": ["node_modules"]
+  "include": ["src/next-env.d.ts", "src/**/*"],
+  "exclude": ["node_modules", "assets"]
 }

@@ -1,6 +1,7 @@
 /** @type {import('next').NextConfig} */
 
 const { PHASE_DEVELOPMENT_SERVER, PHASE_PRODUCTION_SERVER, PHASE_PRODUCTION_BUILD } = require('next/constants');
+const path = require('path')
 
 module.exports = (phase, { defaultConfig }) => {
   let NextConfig = {
@@ -18,3 +19,9 @@ module.exports = (phase, { defaultConfig }) => {
 
   return NextConfig;
 };
+
+module.exports = {
+  sassOptions: {
+    includePaths: [path.join(__dirname, 'src/styles')],
+  },
+}

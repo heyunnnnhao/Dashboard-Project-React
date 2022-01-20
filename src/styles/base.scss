@@ -1,0 +1,54 @@
+/* Inspired by Vercel design */
+@import 'node_modules/modern-normalize/modern-normalize.css';
+
+:root {
+  --background: #fff;
+  --foreground: #000;
+  --accents-1: #fafafa;
+  --accents-2: #eaeaea;
+  --accents-3: #999;
+  --accents-4: #888;
+  --accents-5: #666;
+  --accents-6: #444;
+  --accents-7: #333;
+  --accents-8: #111;
+  --success: #3291ff;
+  --error: #ff1a1a;
+  --secondary: #666;
+  --header-background: hsla(0, 0%, 100%, 0.8);
+  --shadow-smallest: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  --shadow-medium: 0 8px 30px rgba(0, 0, 0, 0.12);
+  --shadow-large: 0 30px 60px rgba(0, 0, 0, 0.12);
+  --link: var(--success);
+  --nav-height: 48px;
+}
+
+[data-theme='dark'] {
+  --foreground: #fff;
+  --background: #000;
+  --accents-8: #fafafa;
+  --accents-7: #eaeaea;
+  --accents-6: #999;
+  --accents-5: #888;
+  --accents-4: #666;
+  --accents-3: #444;
+  --accents-2: #333;
+  --accents-1: #111;
+  --success: #0761d1;
+  --error: #c50000;
+  --secondary: var(--accents-5);
+  --header-background: rgba(0, 0, 0, 0.5);
+  --shadow-smallest: 0 0 0 1px var(--accents-2);
+  --shadow-medium: 0 0 0 1px var(--accents-2);
+  --shadow-large: 0 0 0 1px var(--accents-2);
+}
+
+body {
+  color: var(--foreground);
+  background-color: var(--background);
+  $transitionDuration: 0.15s;
+  -moz-transition: all $transitionDuration ease-in;
+  -o-transition: all $transitionDuration ease-in;
+  -webkit-transition: all $transitionDuration ease-in;
+  transition: all $transitionDuration ease-in;
+}

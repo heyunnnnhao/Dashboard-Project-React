@@ -1,11 +1,14 @@
 .title {
   font-weight: 800;
-  font-size: 7rem;
+  font-size: 8vw;
   text-align: center;
   line-height: 1.1;
-  margin: 24px 0 64px;
+  margin: 4vw 0 6vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   span {
-    // display: block;
+    display: block;
     padding-bottom: 10px;
     margin-bottom: -20px;
   }
@@ -19,6 +22,12 @@
   background: linear-gradient(90deg, rgb(110, 96, 245), rgb(131, 219, 167));
 }
 
+.cross {
+  position: relative;
+  top: 1vw;
+  font-size: 4vw;
+}
+
 .nextjs,
 .mongodb {
   background-clip: text;
@@ -28,17 +37,37 @@
   z-index: 1;
 }
 
-.button {
-  height: 50px;
-  padding: 0px 20px;
-  width: 200px;
-  font-size: 1.2rem;
-  margin: 10px;
+.buttons {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 45vw;
+  margin: 0 auto;
 }
 
-.db{
+.button {
+  height: 5vw;
+  padding: 0px 20px;
+  width: 20vw;
+  font-size: 1.8vw;
+  margin: 4vw;
+  border-radius: 1vw;
+}
+
+.db {
   color: var(--success);
 }
-.dbfailed{
-  color:var(--error)
+.dbfailed {
+  color: var(--error);
+}
+
+.dbindicator {
+  margin: 5vw 0 0 0;
+  width: 100%;
+  text-align: center;
+  font-size: 1/4vw;
+}
+
+.dburl {
+  color: var(--secondaryText);
 }

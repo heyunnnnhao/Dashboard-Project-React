@@ -1,6 +1,6 @@
 .title {
   font-weight: 800;
-  font-size: 8vw;
+  font-size: 7vw;
   text-align: center;
   line-height: 1.1;
   margin: 4vw 0 6vw;
@@ -11,6 +11,11 @@
     display: block;
     padding-bottom: 10px;
     margin-bottom: -20px;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    position: relative;
+    z-index: 1;
   }
 }
 
@@ -20,21 +25,6 @@
 
 .mongodb {
   background: linear-gradient(90deg, rgb(110, 96, 245), rgb(131, 219, 167));
-}
-
-.cross {
-  position: relative;
-  top: 1vw;
-  font-size: 4vw;
-}
-
-.nextjs,
-.mongodb {
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  position: relative;
-  z-index: 1;
 }
 
 .buttons {
@@ -62,12 +52,44 @@
 }
 
 .dbindicator {
-  margin: 5vw 0 0 0;
   width: 100%;
   text-align: center;
   font-size: 1/4vw;
+  margin: 2vw 0;
 }
 
 .dburl {
   color: var(--secondaryText);
+}
+
+.repo {
+  text-align: center;
+  margin: 2vw 0;
+}
+
+.colors {
+  width: 100%;
+  margin: 4vw 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+$colors: (
+  'primary': var(--primary),
+  'success': var(--success),
+  'error': var(--error),
+  'warning': var(--warning),
+);
+
+@each $name, $color in $colors {
+  .#{$name} {
+    display: inline-block;
+    text-align: center;
+    height: 8vw;
+    line-height: 8vw;
+    width: 20vw;
+    color: white;
+    background-color: $color;
+  }
 }

@@ -2,15 +2,21 @@ import Link from 'next/link';
 import styles from 'styles/index.module.scss';
 import { useTheme } from 'next-themes';
 import { MongoClient } from 'mongodb';
+import { useEffect } from 'react';
+import { DBUrl } from 'utils/constants';
 
 export default function Index({ DBUrl, isConnected, data }) {
-  const { theme, setTheme } = useTheme();
+  const { setTheme } = useTheme();
+
+  useEffect(() => {
+    console.log(data);
+  }, []);
 
   return (
     <>
       <h1 className={styles.title}>
         <span className={styles.nextjs}>Next.js</span>
-        <span className={styles.cross}>&emsp;{/*&#10005;&emsp;*/}</span>
+        &nbsp;
         <span className={styles.mongodb}>MongoDB</span>
       </h1>
       <div className={styles.buttons}>
@@ -28,7 +34,21 @@ export default function Index({ DBUrl, isConnected, data }) {
         <span className={styles.dburl}>{DBUrl || ''}</span>
       </p>
 
-      <p>{data.length || 'null'}</p>
+      {data.map((i) => {
+        return (
+          <div className={styles.repo}>
+            <a href={i.html_url} target='_blank'>
+              {i.name}
+            </a>
+          </div>
+        );
+      })}
+
+      <div className={styles.colors}>
+        {['primary', 'success', 'error', 'warning'].map((name) => {
+          return <div className={styles[name]}>{name}</div>;
+        })}
+      </div>
     </>
   );
 }
@@ -36,26 +56,28 @@ export default function Index({ DBUrl, isConnected, data }) {
 export async function getServerSideProps(context) {
   let isConnected = false;
 
-  const DBUrl = process.env.MONGODB_URI;
-
   const options = {};
 
   let client;
-  let clientPromise;
-
-  if (!DBUrl) {
-    throw new Error('Please add your Mongo URI to .env.local');
-  }
 
   try {
     client = new MongoClient(DBUrl, options);
     await client.connect();
 
     isConnected = true;
-  } catch (error) {}
+  } catch (error) {
+    console.log(error);
+  }
 
-  const data = await client.db().collection('test').find({});
-  console.log(data);
+  const data = await client
+    .db()
+    .collection('github')
+    .find({})
+    .toArray()
+    .then((res) => {
+      return JSON.parse(JSON.stringify(res));
+    });
+
   return {
     props: { DBUrl, isConnected, data },
   };

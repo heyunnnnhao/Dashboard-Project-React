@@ -11,25 +11,16 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/hoangvvo/nextjs-mongodb-app.git"
+    "url": "https://github.com/heyunnnnhao/Dashboard-Project-React.git"
   },
-  "author": "Hoang Vo (https://hoangvvo.com)",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/hoangvvo/nextjs-mongodb-app/issues"
-  },
-  "homepage": "https://github.com/hoangvvo/nextjs-mongodb-app#readme",
+  "author": "heyunnnnhao",
+  "license": "ISC",
+  "homepage": "",
   "dependencies": {
-    "ajv": "^8.9.0",
     "axios": "^0.25.0",
     "bcryptjs": "^2.4.3",
-    "connect-mongo": "^4.6.0",
-    "express-session": "^1.17.2",
-    "modern-normalize": "^1.1.0",
     "mongodb": "^4.3.1",
     "next": "^12.0.8",
-    "next-connect": "^0.11.0",
-    "next-session": "^4.0.4",
     "next-themes": "^0.0.15",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",

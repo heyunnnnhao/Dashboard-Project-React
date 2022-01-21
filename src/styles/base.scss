@@ -1,6 +1,3 @@
-/* Inspired by Vercel design */
-@import 'node_modules/modern-normalize/modern-normalize.css';
-
 :root {
 }
 
@@ -9,10 +6,9 @@
   --text: #000000;
   --secondaryText: #272727;
   --primary: #409eff;
-  --success: #67c23a;
+  --success: #47d400;
   --error: #ef5350;
   --warning: #e6a23c;
-  --secondary: #666;
   --header-background: rgba(255, 255, 255, 0.8);
 }
 
@@ -21,8 +17,8 @@
   --text: #fff;
   --secondaryText: #cfcfcf;
   --primary: #409eff;
-  --success: #67c23a;
-  --error: #ef5350;
+  --success: #63ca30;
+  --error: #d9534f;
   --warning: #e6a23c;
   --header-background: #00000080;
 }

@@ -1,3 +1,3 @@
-export const env = process.env.NODE_ENV;
+export const env: any = process.env.NODE_ENV;
 
-export const baseURL = process.env.baseURL;
+export const DBUrl: any = process.env.MONGODB_URI;

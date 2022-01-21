@@ -21,7 +21,7 @@
       "utils/*": ["/src/utils/*"],
       "pages/*": ["/src/pages/*"],
       "styles/*": ["/src/styles/*"],
-      "api-lib/*": ["/src/api-lib/*"],
+      "db/*": ["/src/db/*"],
       "assets/*": ["/assets/*"]
     }
   },

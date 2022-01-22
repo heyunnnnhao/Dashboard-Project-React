@@ -26,7 +26,7 @@
 body {
   color: var(--text);
   background-color: var(--background);
-  $transitionDuration: 0.15s;
+  $transitionDuration: 0.1s;
   -moz-transition: all $transitionDuration ease-in;
   -o-transition: all $transitionDuration ease-in;
   -webkit-transition: all $transitionDuration ease-in;

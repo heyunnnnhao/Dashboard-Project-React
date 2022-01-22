@@ -1,17 +1,5 @@
 import useSWR from 'swr';
 import axios from 'axios';
-import { env } from './constants';
-
-type useFetchOptions = {
-  latency?: number;
-  name?: string;
-};
-
-type useFetchResopnse = {
-  data: Array<any>;
-  error: boolean;
-  loading: boolean;
-};
 
 const fetcher = async (url: string, componentName: string) => {
   const res = await fetch(url);
@@ -26,7 +14,7 @@ const fetcher = async (url: string, componentName: string) => {
   return res.json();
 };
 
-export function useFetch(requestURL: string, options: useFetchOptions): useFetchResopnse {
+export function useFetch(requestURL: string, options) {
   const { latency = 0, name = 'the data' } = options;
 
   const { data = null, error = false } = useSWR(requestURL, () => fetcher(requestURL, name));
@@ -37,5 +25,5 @@ export function useFetch(requestURL: string, options: useFetchOptions): useFetch
 }
 
 export const AxiosRequestInstance = axios.create({
-  timeout: 1000,
+  timeout: 5000,
 });

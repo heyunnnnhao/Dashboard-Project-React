@@ -1,15 +1,19 @@
+import { useEffect, useState } from 'react';
 import Link from 'next/link';
-import styles from 'styles/index.module.scss';
 import { useTheme } from 'next-themes';
 import { MongoClient } from 'mongodb';
-import { useEffect } from 'react';
 import { DBUrl } from 'utils/constants';
+import { getUserStarredRepos, getGithubUserInfo, getGithubApiLimit } from 'lib/github';
+import styles from 'styles/index.module.scss';
 
 export default function Index({ DBUrl, isConnected, data }) {
   const { setTheme } = useTheme();
+  const [limit, setLimit] = useState();
 
-  useEffect(() => {
-    console.log(data);
+  useEffect(async () => {
+    const res = await getUserStarredRepos('heyunnnnhao');
+    const remain = await getGithubApiLimit();
+    setLimit(remain.data.remaining);
   }, []);
 
   return (
@@ -19,6 +23,7 @@ export default function Index({ DBUrl, isConnected, data }) {
         &nbsp;
         <span className={styles.mongodb}>MongoDB</span>
       </h1>
+      <div>{limit}</div>
       <div className={styles.buttons}>
         <button onClick={() => setTheme('light')} className={styles.button}>
           Light Mode
@@ -30,13 +35,13 @@ export default function Index({ DBUrl, isConnected, data }) {
       <p className={styles.dbindicator}>
         The Database
         <span className={isConnected ? styles.db : styles.dbfailed}>{isConnected ? ' is ' : ' is not '}</span>
-        connected at&nbsp;
+        connected to&nbsp;
         <span className={styles.dburl}>{DBUrl || ''}</span>
       </p>
 
       {data.map((i) => {
         return (
-          <div className={styles.repo}>
+          <div className={styles.repo} key={i._id}>
             <a href={i.html_url} target='_blank'>
               {i.name}
             </a>
@@ -45,8 +50,12 @@ export default function Index({ DBUrl, isConnected, data }) {
       })}
 
       <div className={styles.colors}>
-        {['primary', 'success', 'error', 'warning'].map((name) => {
-          return <div className={styles[name]}>{name}</div>;
+        {['primary', 'success', 'error', 'warning'].map((name, index) => {
+          return (
+            <div className={styles[name]} key={index}>
+              {name}
+            </div>
+          );
         })}
       </div>
     </>

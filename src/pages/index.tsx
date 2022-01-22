@@ -10,10 +10,12 @@ export default function Index({ DBUrl, isConnected, data }) {
   const { setTheme } = useTheme();
   const [limit, setLimit] = useState();
 
-  useEffect(async () => {
-    const res = await getUserStarredRepos('heyunnnnhao');
-    const remain = await getGithubApiLimit();
-    setLimit(remain.data.remaining);
+  useEffect(() => {
+    (async (): Promise<any> => {
+      const res = await getUserStarredRepos('heyunnnnhao');
+      const remain: any = await getGithubApiLimit();
+      setLimit(remain.data.remaining);
+    })();
   }, []);
 
   return (

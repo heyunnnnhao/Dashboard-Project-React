@@ -24,6 +24,17 @@ export function useFetch(requestURL: string, options) {
   return { data, error, loading };
 }
 
-export const AxiosRequestInstance = axios.create({
-  timeout: 5000,
+const AxiosRequestInstance = axios.create({
+  timeout: 10000,
+  maxRedirects: 5,
 });
+
+AxiosRequestInstance.interceptors.request.use((config) => {
+  const { method = 'get', url } = config;
+
+  // console.log(`${method}ting ${url} ......`);
+
+  return config;
+});
+
+export { AxiosRequestInstance };

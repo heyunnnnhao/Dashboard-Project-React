@@ -23,7 +23,8 @@
       "styles/*": ["src/styles/*"],
       "db/*": ["src/db/*"],
       "lib/*": ["src/lib/*"],
-      "assets/*": ["assets/*"]
+      "assets/*": ["assets/*"],
+      "constant": ["src/constants.ts"]
     }
   },
   "include": ["src/next-env.d.ts", "src/**/*"],

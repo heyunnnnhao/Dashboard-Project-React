@@ -1,7 +1,12 @@
-import { AxiosRequestInstance } from '../../../utils/request';
+import { AxiosRequestInstance } from 'utils/index';
 
 export default async function handler(req, res) {
-  const result = await AxiosRequestInstance.get(`https://api.github.com/users/${req.body.username}/starred`);
+  const { username } = req.query;
 
-  res.status(200).json(result.data);
+  try {
+    const result = await AxiosRequestInstance.get(`https://api.github.com/users/${username}/starred`);
+    res.status(200).send(result.data);
+  } catch (error) {
+    throw Error(`get starred projects for user ${username} failed` + error);
+  }
 }

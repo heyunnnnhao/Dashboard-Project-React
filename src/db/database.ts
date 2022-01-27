@@ -1,5 +1,5 @@
 import { MongoClient } from 'mongodb';
-import { DBUrl } from '../utils/constants';
+import { DBUrl } from 'constant';
 
 global.mongo = global.mongo || {};
 

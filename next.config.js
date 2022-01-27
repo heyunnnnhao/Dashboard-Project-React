@@ -22,10 +22,5 @@ module.exports = {
   sassOptions: {
     includePaths: [path.join(__dirname, 'src/styles')],
   },
-  experimental: {
-    removeConsole: {
-      exclude: ['error'],
-    },
-  },
   distDir: 'dist',
 };

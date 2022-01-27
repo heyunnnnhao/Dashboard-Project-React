@@ -1,4 +1,5 @@
-import { AxiosRequestInstance } from 'utils/request';
+import { AxiosRequestInstance } from 'utils/index';
+import { MY_GITHUB_USERNAME } from 'constant';
 
 export async function getGithubApiLimit() {
   return await AxiosRequestInstance.get('/api/github/limit')
@@ -11,7 +12,7 @@ export async function getGithubApiLimit() {
 }
 
 export async function getGithubUserInfo(username) {
-  return await AxiosRequestInstance.post('/api/github/user', { username })
+  return await AxiosRequestInstance.get(`/api/github/user?username=${username}`)
     .then((res) => {
       return res;
     })
@@ -21,7 +22,7 @@ export async function getGithubUserInfo(username) {
 }
 
 export async function getUserStarredRepos(username) {
-  return await AxiosRequestInstance.post('/api/github/star', { username })
+  return await AxiosRequestInstance.get(`/api/github/star?username=${username}`)
     .then((res) => {
       return res;
     })
@@ -31,7 +32,7 @@ export async function getUserStarredRepos(username) {
 }
 
 export async function getGithubUserRepos(username) {
-  return await AxiosRequestInstance.post('/api/github/star', { username })
+  return await AxiosRequestInstance.post(`/api/github/repo?username=${username}`)
     .then((res) => {
       return res;
     })
@@ -40,10 +41,12 @@ export async function getGithubUserRepos(username) {
     });
 }
 
-export async function updateMyReposToDB(username) {
-  const repos = await getGithubUserRepos(username);
+export async function updateMyReposToDB(username = MY_GITHUB_USERNAME) {
+  const reposResponse: any = await getGithubUserRepos(username);
 
-  return await AxiosRequestInstance.post('/api/github/update', { repos })
+  const { data: repos } = reposResponse;
+
+  return await AxiosRequestInstance.post('/api/github/updatedb', { repos, username })
     .then((res) => {
       return res;
     })

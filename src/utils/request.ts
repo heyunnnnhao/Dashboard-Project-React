@@ -1,5 +1,5 @@
 import useSWR from 'swr';
-import axios from 'axios';
+import axios, { AxiosResponse, AxiosRequestConfig, AxiosInstance } from 'axios';
 
 const fetcher = async (url: string, componentName: string) => {
   const res = await fetch(url);
@@ -24,17 +24,27 @@ export function useFetch(requestURL: string, options) {
   return { data, error, loading };
 }
 
-const AxiosRequestInstance = axios.create({
+const AxiosRequestInstance: AxiosInstance = axios.create({
   timeout: 10000,
   maxRedirects: 5,
 });
 
-AxiosRequestInstance.interceptors.request.use((config) => {
-  const { method = 'get', url } = config;
+AxiosRequestInstance.interceptors.request.use(
+  (config: AxiosRequestConfig): AxiosRequestConfig => {
+    return config;
+  },
+  (error) => {
+    console.log(error);
+  }
+);
 
-  // console.log(`${method}ting ${url} ......`);
-
-  return config;
-});
+AxiosRequestInstance.interceptors.response.use(
+  (response: AxiosResponse): AxiosResponse => {
+    return response;
+  },
+  (error) => {
+    console.log(error);
+  }
+);
 
 export { AxiosRequestInstance };

@@ -42,11 +42,19 @@ export async function getGithubUserRepos(username) {
 }
 
 export async function updateMyReposToDB(username = MY_GITHUB_USERNAME) {
-  const reposResponse: any = await getGithubUserRepos(username);
+  const myInfo: any = await getGithubUserInfo(username);
 
-  const { data: repos } = reposResponse;
+  const myRepos: any = await getGithubUserRepos(username);
 
-  return await AxiosRequestInstance.post('/api/github/updatedb', { repos, username })
+  const myStarred: any = await getUserStarredRepos(username);
+
+  const data = {
+    ...myInfo.data,
+    repos: myRepos.data,
+    starred: myStarred.data,
+  };
+
+  return await AxiosRequestInstance.post('/api/github/updatedb', { data, username })
     .then((res) => {
       return res;
     })

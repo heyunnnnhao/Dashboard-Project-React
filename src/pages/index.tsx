@@ -13,9 +13,10 @@ export default function Index({ DBUrl, isConnected, data }): JSX.Element {
   useEffect(() => {
     (async (): Promise<any> => {
       const remain: any = await getGithubApiLimit();
-      await updateMyReposToDB()
+      const updateInfo = await updateMyReposToDB();
       setLimit(remain.data.remaining);
       console.log(env);
+      console.log(updateInfo);
     })();
   }, []);
 

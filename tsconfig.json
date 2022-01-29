@@ -22,7 +22,7 @@
       "pages/*": ["src/pages/*"],
       "styles/*": ["src/styles/*"],
       "db/*": ["src/db/*"],
-      "lib/*": ["src/lib/*"],
+      "api/*": ["src/pages/api/*"],
       "assets/*": ["assets/*"],
       "constant": ["src/constants.ts"]
     }

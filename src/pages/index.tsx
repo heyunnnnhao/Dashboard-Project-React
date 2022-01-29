@@ -1,24 +1,13 @@
 import { useEffect, useState } from 'react';
 import { useTheme } from 'next-themes';
-import { MongoClient } from 'mongodb';
-import { DBUrl, env } from 'constant';
-import { updateMyReposToDB, getGithubApiLimit, getGithubUserInfo } from 'lib/github';
 import { MY_GITHUB_USERNAME } from 'constant';
+import { updateUserToDB, getGithubApiLimit } from 'pages/api/github';
 import styles from 'styles/index.module.scss';
 
-export default function Index({ DBUrl, isConnected, data }): JSX.Element {
+export default function Index({ limit }): JSX.Element {
   const { setTheme } = useTheme();
-  const [limit, setLimit] = useState();
 
-  useEffect(() => {
-    (async (): Promise<any> => {
-      const remain: any = await getGithubApiLimit();
-      const updateInfo = await updateMyReposToDB();
-      setLimit(remain.data.remaining);
-      console.log(env);
-      console.log(updateInfo);
-    })();
-  }, []);
+  useEffect(() => {}, []);
 
   return (
     <>
@@ -26,7 +15,8 @@ export default function Index({ DBUrl, isConnected, data }): JSX.Element {
         <span className={styles.nextjs}>Next.js&nbsp;</span>
         <span className={styles.mongodb}>MongoDB</span>
       </h1>
-      <div>{limit}</div>
+      <div>{new Date(limit.reset * 1000).toLocaleString('zh-CN')}</div>
+      <div>{limit.remaining}</div>
       <div className={styles.buttons}>
         <button onClick={() => setTheme('light')} className={styles.button}>
           Light Mode
@@ -35,22 +25,6 @@ export default function Index({ DBUrl, isConnected, data }): JSX.Element {
           Dark Mode
         </button>
       </div>
-      <p className={styles.dbindicator}>
-        The Database
-        <span className={isConnected ? styles.db : styles.dbfailed}>{isConnected ? ' is ' : ' is not '}</span>
-        connected to&nbsp;
-        <span className={styles.dburl}>{DBUrl}</span>
-      </p>
-
-      {data.map((i) => {
-        return (
-          <div className={styles.repo} key={i._id}>
-            <a href={i.html_url} target='_blank' rel='noreferrer'>
-              {i.name}
-            </a>
-          </div>
-        );
-      })}
 
       <div className={styles.colors}>
         {['primary', 'success', 'error', 'warning'].map((name, index) => {
@@ -66,31 +40,15 @@ export default function Index({ DBUrl, isConnected, data }): JSX.Element {
 }
 
 export async function getServerSideProps(context) {
-  let isConnected = false;
-
-  const options = {};
-
-  let client;
+  let limit = null;
 
   try {
-    client = new MongoClient(DBUrl, options);
-    await client.connect();
-
-    isConnected = true;
+    limit = await getGithubApiLimit();
   } catch (error) {
     console.log(error);
   }
 
-  const data = await client
-    .db()
-    .collection('github')
-    .find({})
-    .toArray()
-    .then((res) => {
-      return JSON.parse(JSON.stringify(res));
-    });
-
   return {
-    props: { DBUrl, isConnected, data },
+    props: { limit },
   };
 }

@@ -7,7 +7,9 @@ import styles from 'styles/index.module.scss';
 export default function Index({ limit }): JSX.Element {
   const { setTheme } = useTheme();
 
-  useEffect(() => {}, []);
+  useEffect(() => {
+    console.log(limit);
+  }, []);
 
   return (
     <>

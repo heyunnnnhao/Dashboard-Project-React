@@ -1,4 +1,5 @@
 import { AxiosRequestInstance } from 'utils/index';
+import database from 'src/database';
 
 export async function getLimit() {
   return AxiosRequestInstance.get(`https://api.github.com/rate_limit`)
@@ -37,5 +38,16 @@ export async function getUser(username) {
     })
     .catch((error) => {
       throw Error(`get ${username} info failed` + error);
+    });
+}
+
+export async function updateUser(username, data) {
+  const db = await database('github');
+
+  return await db
+    .collection('users')
+    .replaceOne({ login: username }, data)
+    .then((res) => {
+      return JSON.parse(JSON.stringify(res));
     });
 }

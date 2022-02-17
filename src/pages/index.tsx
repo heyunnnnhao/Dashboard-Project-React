@@ -8,6 +8,7 @@ export default function Index({ limit }): JSX.Element {
   const { setTheme } = useTheme();
 
   useEffect(() => {
+   
     console.log(limit);
   }, []);
 

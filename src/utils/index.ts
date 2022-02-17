@@ -1,2 +1,5 @@
-export { useFetch, AxiosRequestInstance } from './request';
-export { getTimeDiff } from './time';
+import { useFetch } from './request';
+import { getTimeDiff } from './time';
+import AxiosRequestInstance from './axios';
+
+export { AxiosRequestInstance, useFetch, getTimeDiff };

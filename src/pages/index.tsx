@@ -1,13 +1,15 @@
 import { useEffect, useState } from 'react';
 import { useTheme } from 'next-themes';
 import { MY_GITHUB_USERNAME } from 'constant';
-import { updateUserToDB, getGithubApiLimit } from 'lib/github';
+import { updateUserToDB, getGithubApiLimit } from 'api/github';
 import styles from 'styles/index.module.scss';
 
 export default function Index({ limit }): JSX.Element {
   const { setTheme } = useTheme();
 
-  useEffect(() => {}, []);
+  useEffect(() => {
+    console.log(limit);
+  }, []);
 
   return (
     <>
@@ -41,8 +43,6 @@ export default function Index({ limit }): JSX.Element {
 
 export async function getServerSideProps(context) {
   let limit = null;
-
-  await updateUserToDB(MY_GITHUB_USERNAME);
 
   try {
     limit = await getGithubApiLimit();

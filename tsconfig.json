@@ -21,7 +21,7 @@
       "utils/*": ["src/utils/*"],
       "pages/*": ["src/pages/*"],
       "styles/*": ["src/styles/*"],
-      "lib/*": ["src/lib/*"],
+      "lib/*": ["src/provider/*"],
       "api/*": ["src/pages/api/*"],
       "constant": ["src/constants.ts"]
     }

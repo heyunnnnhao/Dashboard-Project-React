@@ -1,8 +1,10 @@
 import { AxiosRequestInstance } from 'utils/index';
 import database from 'src/database';
 
+const baseGithubUrl = 'https://api.github.com/';
+
 export async function getLimit() {
-  return AxiosRequestInstance.get(`https://api.github.com/rate_limit`)
+  return AxiosRequestInstance.get(baseGithubUrl + `rate_limit`)
     .then((res) => {
       return res.data.rate;
     })
@@ -12,7 +14,7 @@ export async function getLimit() {
 }
 
 export async function getRepos(username) {
-  return AxiosRequestInstance.get(`https://api.github.com/users/${username}/repos`)
+  return AxiosRequestInstance.get(baseGithubUrl + `users/${username}/repos`)
     .then((res) => {
       return res.data;
     })
@@ -22,7 +24,7 @@ export async function getRepos(username) {
 }
 
 export async function getStars(username) {
-  return AxiosRequestInstance.get(`https://api.github.com/users/${username}/starred`)
+  return AxiosRequestInstance.get(baseGithubUrl + `users/${username}/starred`)
     .then((res) => {
       return res.data;
     })
@@ -32,7 +34,7 @@ export async function getStars(username) {
 }
 
 export async function getUser(username) {
-  return AxiosRequestInstance.get(`https://api.github.com/users/${username}`)
+  return AxiosRequestInstance.get(baseGithubUrl + `users/${username}`)
     .then((res) => {
       return res.data;
     })

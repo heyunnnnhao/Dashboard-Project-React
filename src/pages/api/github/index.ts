@@ -1,4 +1,4 @@
-import * as githubApi from 'api/github/api';
+import * as githubApi from 'src/provider/github';
 
 export async function getGithubApiLimit() {
   return await githubApi
@@ -16,8 +16,6 @@ export async function updateUserToDB(username) {
     return res.remaining;
   });
 
-  if (apiCallRemaining < 1) throw Error('rate limit exceeds');
-
   const myInfo: any = await githubApi.getUser(username);
 
   const myRepos: any = await githubApi.getRepos(username);
@@ -29,7 +27,7 @@ export async function updateUserToDB(username) {
     repos: myRepos,
     starred: myStarred,
   };
-  
+
   return await githubApi
     .updateUser(username, data)
     .then((res) => {
